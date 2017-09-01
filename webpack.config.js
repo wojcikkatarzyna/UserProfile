@@ -3,11 +3,13 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 module.exports = {
-    entry: ["whatwg-fetch", "./js/App.jsx"],
-    output: {
-        path: path.resolve(__dirname, "./js"),
-        publicPath: '/js',
-        filename: "out.js"
+    entry : {
+        'js/out.js': './js/App.jsx',
+        'css/main.css~': './scss/main.scss'
+    },
+    output : {
+        path: __dirname+'/',
+        filename: '[name]'
     },
     devServer: {
         inline: true,

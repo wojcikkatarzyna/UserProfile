@@ -12,6 +12,11 @@ class UserInfo extends React.Component{
         };
     }
 
+    handleShareClick = (e) => {
+        e.preventDefault();
+        alert("Url : "+document.location);
+    }
+
     handleHeartClick = (e) => {
         e.preventDefault();
         if ( typeof this.props.onLikes === 'function' ){
@@ -22,6 +27,7 @@ class UserInfo extends React.Component{
     render(){
         return  <header>
                     <img src="images/Harvey.jpg" alt="User Photo"/>
+                    <div className="material-icons" onClick={this.handleShareClick}> share </div>
                     <h1 className="name"> {this.state.userName} {this.state.userSurname} </h1>
                     <span className="heart" onClick={this.handleHeartClick}> &#9825; </span>
                     <h2 className="city"> {this.state.userCity}, {this.state.userCountry} </h2>

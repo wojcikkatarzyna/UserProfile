@@ -17,7 +17,7 @@ class User extends React.Component{
             likes : this.state.likes + 1,
         })
     }
-    
+
     render(){
         return  <div>
                     <UserInfo onLikes={this.handleAddLikes}/>
