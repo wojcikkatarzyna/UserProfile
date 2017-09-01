@@ -9,12 +9,16 @@ import ReactDOM from 'react-dom';
 // } from 'react-router';
 
 import User from './Components/User.jsx';
+import Comments from './Components/Comments.jsx';
 
 document.addEventListener('DOMContentLoaded', function(){
 
     class App extends React.Component{
         render(){
-            return  <User />
+            return  <div>
+                        <User />
+                        <Comments />
+                    </div>
         }
     }
 

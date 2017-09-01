@@ -12,6 +12,7 @@ class User extends React.Component{
         };
     }
 
+    // increase number of likes
     handleAddLikes = (e) => {
         this.setState({
             likes : this.state.likes + 1,

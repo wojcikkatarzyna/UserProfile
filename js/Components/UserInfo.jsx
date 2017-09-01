@@ -12,11 +12,13 @@ class UserInfo extends React.Component{
         };
     }
 
+    // display url of website
     handleShareClick = (e) => {
         e.preventDefault();
         alert("Url : "+document.location);
     }
 
+    //call a function which increase number of likess
     handleHeartClick = (e) => {
         e.preventDefault();
         if ( typeof this.props.onLikes === 'function' ){

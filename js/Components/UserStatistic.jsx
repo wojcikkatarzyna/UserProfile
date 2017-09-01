@@ -9,6 +9,7 @@ class UserStatistic extends React.Component{
         };
     }
 
+    //increase number of followers
     handleFollowClick = (e) => {
         e.preventDefault();
         this.setState({
