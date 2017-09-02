@@ -23310,6 +23310,8 @@ var _reactDom = __webpack_require__(27);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+__webpack_require__(84);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -23317,9 +23319,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-// empty array, place to hold all comments
-var allComments = [];
 
 var AddComment = function (_React$Component) {
     _inherits(AddComment, _React$Component);
@@ -23338,17 +23337,26 @@ var AddComment = function (_React$Component) {
 
         _this.handleSendClick = function (e) {
             e.preventDefault();
-            allComments.push({
+
+            //create object from current comment
+            var comment = {
                 author: _this.state.currentUserName,
                 photo: _this.state.currentUserImage,
                 comment: _this.state.currentComment,
                 date: new Date(),
                 timeCounter: Date.now()
-            });
-            var comments = JSON.stringify(allComments);
-            localStorage.setItem("allOfComments", comments);
-            console.log(localStorage);
 
+                //post current comment to JSON file
+            };fetch('http://localhost:3000/comments', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(comment)
+            });
+
+            // reset add comment input
             _this.setState({
                 currentComment: ""
             });
@@ -23363,9 +23371,6 @@ var AddComment = function (_React$Component) {
     }
 
     // Save comment to state
-
-
-    // Save current comment to localStorage and reset input value
 
 
     _createClass(AddComment, [{
@@ -23413,6 +23418,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var url = "http://localhost:3000/comments";
 
 var ListOfComments = function (_React$Component) {
     _inherits(ListOfComments, _React$Component);

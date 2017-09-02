@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+const url = "http://localhost:3000/comments";
+
 class ListOfComments extends React.Component{
     constructor(props){
         super(props);

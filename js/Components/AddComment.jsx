@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// empty array, place to hold all comments
-const allComments = [];
+import 'whatwg-fetch';
 
 class AddComment extends React.Component{
     constructor(props){
@@ -22,20 +21,29 @@ class AddComment extends React.Component{
         })
     }
 
-    // Save current comment to localStorage and reset input value
     handleSendClick = (e) => {
         e.preventDefault();
-        allComments.push({
+        
+        //create object from current comment
+        const comment = {
             author : this.state.currentUserName,
             photo : this.state.currentUserImage,
             comment : this.state.currentComment,
             date : new Date(),
-            timeCounter : Date.now(),
-        })
-        let comments = JSON.stringify(allComments);
-        localStorage.setItem("allOfComments", comments);
-        console.log(localStorage);
+            timeCounter : Date.now()
+        }
 
+        //post current comment to JSON file
+        fetch('http://localhost:3000/comments', {
+            method : 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body : JSON.stringify(comment)
+        })
+
+        // reset add comment input
         this.setState({
             currentComment : "",
         })
