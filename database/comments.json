@@ -23,6 +23,14 @@
       "date": "2017-09-02T15:19:27.843Z",
       "timeCounter": 1504365567843,
       "id": 3
+    },
+    {
+      "author": "Mike Ross",
+      "photo": "images/Mike.jpg",
+      "comment": "1532",
+      "date": "2017-09-02T15:21:09.995Z",
+      "timeCounter": 1504365669995,
+      "id": 4
     }
   ]
 }

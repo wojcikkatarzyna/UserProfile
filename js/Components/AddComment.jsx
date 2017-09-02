@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import 'whatwg-fetch';
-
 class AddComment extends React.Component{
     constructor(props){
         super(props);
@@ -23,7 +21,7 @@ class AddComment extends React.Component{
 
     handleSendClick = (e) => {
         e.preventDefault();
-        
+
         //create object from current comment
         const comment = {
             author : this.state.currentUserName,

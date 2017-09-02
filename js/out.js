@@ -23310,8 +23310,6 @@ var _reactDom = __webpack_require__(27);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-__webpack_require__(84);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -23419,8 +23417,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var url = "http://localhost:3000/comments";
-
 var ListOfComments = function (_React$Component) {
     _inherits(ListOfComments, _React$Component);
 
@@ -23430,7 +23426,8 @@ var ListOfComments = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (ListOfComments.__proto__ || Object.getPrototypeOf(ListOfComments)).call(this, props));
 
         _this.state = {
-            currentTimeCounter: Date.now()
+            currentTimeCounter: Date.now(),
+            listOfComments: []
         };
         return _this;
     }
@@ -23456,39 +23453,49 @@ var ListOfComments = function (_React$Component) {
                 return Math.floor(timeDifference / 1000) + " seconds ago";
             }
         }
-
-        // update currentTimeCounter every minute
-        // currentTimeCounter - returns the number of milliseconds elapsed since 1 January 1970 00:00:00 UTC
-
     }, {
         key: 'componentDidMount',
         value: function componentDidMount() {
             var _this2 = this;
 
+            // update currentTimeCounter every minute
+            // currentTimeCounter - returns the number of milliseconds elapsed since 1 January 1970 00:00:00 UTC
             this.intervalId = setInterval(function () {
                 _this2.setState({
                     currentTimeCounter: Date.now()
                 });
             }, 60000);
+
+            // save comments from JSON file to array in state
+            fetch('http://localhost:3000/comments').then(function (r) {
+                return r.json();
+            }).then(function (response) {
+                _this2.setState({
+                    listOfComments: response
+                });
+            });
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            clearInterval(this.intervalId);
         }
     }, {
         key: 'render',
         value: function render() {
             var _this3 = this;
 
-            var savedComments = localStorage.getItem('allOfComments');
-            var comments = JSON.parse(savedComments);
-            if (comments.length === 0) {
+            if (this.state.listOfComments.length === 0) {
                 return null;
             } else {
-                var allComments = comments.map(function (element, index) {
+                var allComments = this.state.listOfComments.map(function (element, index) {
 
                     // call the function and calculate time from publication
                     var published = _this3.timeFromPublication(_this3.state.currentTimeCounter, element.timeCounter);
 
                     return _react2.default.createElement(
                         'div',
-                        { className: 'singleComment', key: index },
+                        { className: 'singleComment', key: element.id },
                         _react2.default.createElement('img', { className: 'commentPhoto', src: element.photo }),
                         _react2.default.createElement(
                             'div',
