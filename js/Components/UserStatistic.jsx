@@ -17,7 +17,7 @@ class UserStatistic extends React.Component{
         })
     }
     render(){
-        return  <section className="statistic">
+        return  <main className="statistic">
                     <div className="likes">
                         <h3> {this.props.likes} </h3>
                         <h4> Likes </h4>
@@ -31,7 +31,7 @@ class UserStatistic extends React.Component{
                         <h4> Followers </h4>
                     </div>
                     <button onClick={this.handleFollowClick}> FOLLOW </button>
-                </section>
+                </main>
     }
 }
 

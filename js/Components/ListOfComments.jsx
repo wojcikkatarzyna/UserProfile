@@ -58,9 +58,9 @@ class ListOfComments extends React.Component{
                             <div className="commentContent"> {element.comment} </div>
                         </div>
             })
-            return  <div className="CommentsList">
+            return  <article className="CommentsList">
                           {allComments}
-                    </div>
+                    </article>
         }
     }
 }

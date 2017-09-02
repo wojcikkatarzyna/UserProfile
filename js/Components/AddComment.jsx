@@ -48,10 +48,10 @@ class AddComment extends React.Component{
     }
 
     render(){
-        return  <div className="newComment">
+        return  <footer className="newComment">
                     <input placeholder="Add a comment" onChange={this.handleCommentChange} value={this.state.currentComment}/>
                     <button className="material-icons" onClick={this.handleSendClick}> send </button>
-                </div>
+                </footer>
     }
 }
 

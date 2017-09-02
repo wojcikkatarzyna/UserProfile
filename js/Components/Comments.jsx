@@ -11,6 +11,7 @@ class Comments extends React.Component{
             listOfComments : [],
             numberOfComments : 0,
             showComments : true,
+            loading : true,
         };
     }
 
@@ -28,6 +29,7 @@ class Comments extends React.Component{
         .then(r => r.json())
         .then( response =>{
             this.setState({
+                loading : false,
                 listOfComments : response,
                 numberOfComments : response.length,
             })
@@ -35,11 +37,17 @@ class Comments extends React.Component{
     }
 
     render(){
-        return  <section className="comments">
-                    <div onClick={this.handleShowHideClick}> {this.state.showComments ? "Hide comments" : "Show comments"}  ( {this.state.numberOfComments} ) </div>
-                    <ListOfComments showComments={this.state.showComments} listOfComments={this.state.listOfComments} />
-                    <AddComment />
-                </section>
+        if (this.state.loading) {
+            return  <div>
+                        Please, wait a minute...
+                    </div>
+        } else {
+            return  <section className="comments">
+                        <header onClick={this.handleShowHideClick}> {this.state.showComments ? "Hide comments" : "Show comments"}  ( {this.state.numberOfComments} ) </header>
+                        <ListOfComments showComments={this.state.showComments} listOfComments={this.state.listOfComments} />
+                        <AddComment />
+                    </section>
+        }
     }
 }
 

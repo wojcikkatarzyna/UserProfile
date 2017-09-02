@@ -22972,8 +22972,8 @@ var User = function (_React$Component) {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                'div',
-                null,
+                'section',
+                { className: 'profile' },
                 _react2.default.createElement(_UserInfo2.default, { onLikes: this.handleAddLikes }),
                 _react2.default.createElement(_UserStatistic2.default, { likes: this.state.likes })
             );
@@ -23142,7 +23142,7 @@ var UserStatistic = function (_React$Component) {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                'section',
+                'main',
                 { className: 'statistic' },
                 _react2.default.createElement(
                     'div',
@@ -23260,7 +23260,8 @@ var Comments = function (_React$Component) {
         _this.state = {
             listOfComments: [],
             numberOfComments: 0,
-            showComments: true
+            showComments: true,
+            loading: true
         };
         return _this;
     }
@@ -23280,6 +23281,7 @@ var Comments = function (_React$Component) {
                 return r.json();
             }).then(function (response) {
                 _this2.setState({
+                    loading: false,
                     listOfComments: response,
                     numberOfComments: response.length
                 });
@@ -23288,21 +23290,29 @@ var Comments = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
-            return _react2.default.createElement(
-                'section',
-                { className: 'comments' },
-                _react2.default.createElement(
+            if (this.state.loading) {
+                return _react2.default.createElement(
                     'div',
-                    { onClick: this.handleShowHideClick },
-                    ' ',
-                    this.state.showComments ? "Hide comments" : "Show comments",
-                    '  ( ',
-                    this.state.numberOfComments,
-                    ' ) '
-                ),
-                _react2.default.createElement(_ListOfComments2.default, { showComments: this.state.showComments, listOfComments: this.state.listOfComments }),
-                _react2.default.createElement(_AddComment2.default, null)
-            );
+                    null,
+                    'Please, wait a minute...'
+                );
+            } else {
+                return _react2.default.createElement(
+                    'section',
+                    { className: 'comments' },
+                    _react2.default.createElement(
+                        'header',
+                        { onClick: this.handleShowHideClick },
+                        ' ',
+                        this.state.showComments ? "Hide comments" : "Show comments",
+                        '  ( ',
+                        this.state.numberOfComments,
+                        ' ) '
+                    ),
+                    _react2.default.createElement(_ListOfComments2.default, { showComments: this.state.showComments, listOfComments: this.state.listOfComments }),
+                    _react2.default.createElement(_AddComment2.default, null)
+                );
+            }
         }
     }]);
 
@@ -23393,7 +23403,7 @@ var AddComment = function (_React$Component) {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                'div',
+                'footer',
                 { className: 'newComment' },
                 _react2.default.createElement('input', { placeholder: 'Add a comment', onChange: this.handleCommentChange, value: this.state.currentComment }),
                 _react2.default.createElement(
@@ -23529,7 +23539,7 @@ var ListOfComments = function (_React$Component) {
                     );
                 });
                 return _react2.default.createElement(
-                    'div',
+                    'article',
                     { className: 'CommentsList' },
                     allComments
                 );

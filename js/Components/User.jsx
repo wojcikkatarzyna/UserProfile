@@ -20,10 +20,10 @@ class User extends React.Component{
     }
 
     render(){
-        return  <div>
+        return  <section className="profile">
                     <UserInfo onLikes={this.handleAddLikes}/>
                     <UserStatistic likes={this.state.likes}/>
-                </div>
+                </section>
     }
 }
 
