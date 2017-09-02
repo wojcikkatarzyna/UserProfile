@@ -23230,6 +23230,10 @@ var _AddComment = __webpack_require__(195);
 
 var _AddComment2 = _interopRequireDefault(_AddComment);
 
+var _ListOfComments = __webpack_require__(196);
+
+var _ListOfComments2 = _interopRequireDefault(_ListOfComments);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -23278,6 +23282,7 @@ var Comments = function (_React$Component) {
                     this.state.numberOfComments,
                     ' ) '
                 ),
+                _react2.default.createElement(_ListOfComments2.default, null),
                 _react2.default.createElement(_AddComment2.default, null)
             );
         }
@@ -23336,7 +23341,9 @@ var AddComment = function (_React$Component) {
             allComments.push({
                 author: _this.state.currentUserName,
                 photo: _this.state.currentUserImage,
-                comment: _this.state.currentComment
+                comment: _this.state.currentComment,
+                date: new Date(),
+                timeCounter: Date.now()
             });
             var comments = JSON.stringify(allComments);
             localStorage.setItem("allOfComments", comments);
@@ -23381,6 +23388,137 @@ var AddComment = function (_React$Component) {
 }(_react2.default.Component);
 
 module.exports = AddComment;
+
+/***/ }),
+/* 196 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(24);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(27);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ListOfComments = function (_React$Component) {
+    _inherits(ListOfComments, _React$Component);
+
+    function ListOfComments(props) {
+        _classCallCheck(this, ListOfComments);
+
+        var _this = _possibleConstructorReturn(this, (ListOfComments.__proto__ || Object.getPrototypeOf(ListOfComments)).call(this, props));
+
+        _this.state = {
+            currentTimeCounter: Date.now()
+        };
+        return _this;
+    }
+
+    // calculate time from publication
+
+
+    _createClass(ListOfComments, [{
+        key: 'timeFromPublication',
+        value: function timeFromPublication(timeNow, timeThen) {
+            var timeDifference = timeNow - timeThen;
+            if (timeDifference > 31536000000) {
+                return Math.floor(timeDifference / 31536000000) + " years ago";
+            } else if (timeDifference > 2592000000) {
+                return Math.floor(timeDifference / 2592000000) + " months ago";
+            } else if (timeDifference > 86400000) {
+                return Math.floor(timeDifference / 86400000) + " days ago";
+            } else if (timeDifference > 3600000) {
+                return Math.floor(timeDifference / 3600000) + " hours ago";
+            } else if (timeDifference > 60000) {
+                return Math.floor(timeDifference / 60000) + " minutes ago";
+            } else {
+                return Math.floor(timeDifference / 1000) + " seconds ago";
+            }
+        }
+
+        // update currentTimeCounter every minute
+        // currentTimeCounter - returns the number of milliseconds elapsed since 1 January 1970 00:00:00 UTC
+
+    }, {
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var _this2 = this;
+
+            this.intervalId = setInterval(function () {
+                _this2.setState({
+                    currentTimeCounter: Date.now()
+                });
+            }, 60000);
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this3 = this;
+
+            var savedComments = localStorage.getItem('allOfComments');
+            var comments = JSON.parse(savedComments);
+            if (comments.length === 0) {
+                return null;
+            } else {
+                var allComments = comments.map(function (element, index) {
+
+                    // call the function and calculate time from publication
+                    var published = _this3.timeFromPublication(_this3.state.currentTimeCounter, element.timeCounter);
+
+                    return _react2.default.createElement(
+                        'div',
+                        { className: 'singleComment', key: index },
+                        _react2.default.createElement('img', { className: 'commentPhoto', src: element.photo }),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'commentDate' },
+                            ' ',
+                            published,
+                            ' '
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'commentAuthor' },
+                            ' ',
+                            element.author,
+                            ' '
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'commentContent' },
+                            ' ',
+                            element.comment,
+                            ' '
+                        )
+                    );
+                });
+                return _react2.default.createElement(
+                    'div',
+                    { className: 'CommentsList' },
+                    allComments
+                );
+            }
+        }
+    }]);
+
+    return ListOfComments;
+}(_react2.default.Component);
+
+module.exports = ListOfComments;
 
 /***/ })
 /******/ ]);

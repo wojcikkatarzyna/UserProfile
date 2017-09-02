@@ -28,7 +28,9 @@ class AddComment extends React.Component{
         allComments.push({
             author : this.state.currentUserName,
             photo : this.state.currentUserImage,
-            comment : this.state.currentComment
+            comment : this.state.currentComment,
+            date : new Date(),
+            timeCounter : Date.now(),
         })
         let comments = JSON.stringify(allComments);
         localStorage.setItem("allOfComments", comments);
