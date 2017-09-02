@@ -23258,6 +23258,7 @@ var Comments = function (_React$Component) {
         };
 
         _this.state = {
+            listOfComments: [],
             numberOfComments: 0,
             showComments: true
         };
@@ -23268,6 +23269,23 @@ var Comments = function (_React$Component) {
 
 
     _createClass(Comments, [{
+        key: 'componentDidMount',
+
+
+        // save comments from JSON file to array in state, update numberOfComments
+        value: function componentDidMount() {
+            var _this2 = this;
+
+            fetch('http://localhost:3000/comments').then(function (r) {
+                return r.json();
+            }).then(function (response) {
+                _this2.setState({
+                    listOfComments: response,
+                    numberOfComments: response.length
+                });
+            });
+        }
+    }, {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
@@ -23282,7 +23300,7 @@ var Comments = function (_React$Component) {
                     this.state.numberOfComments,
                     ' ) '
                 ),
-                _react2.default.createElement(_ListOfComments2.default, null),
+                _react2.default.createElement(_ListOfComments2.default, { showComments: this.state.showComments, listOfComments: this.state.listOfComments }),
                 _react2.default.createElement(_AddComment2.default, null)
             );
         }
@@ -23426,8 +23444,7 @@ var ListOfComments = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (ListOfComments.__proto__ || Object.getPrototypeOf(ListOfComments)).call(this, props));
 
         _this.state = {
-            currentTimeCounter: Date.now(),
-            listOfComments: []
+            currentTimeCounter: Date.now()
         };
         return _this;
     }
@@ -23465,15 +23482,6 @@ var ListOfComments = function (_React$Component) {
                     currentTimeCounter: Date.now()
                 });
             }, 60000);
-
-            // save comments from JSON file to array in state
-            fetch('http://localhost:3000/comments').then(function (r) {
-                return r.json();
-            }).then(function (response) {
-                _this2.setState({
-                    listOfComments: response
-                });
-            });
         }
     }, {
         key: 'componentWillUnmount',
@@ -23485,10 +23493,10 @@ var ListOfComments = function (_React$Component) {
         value: function render() {
             var _this3 = this;
 
-            if (this.state.listOfComments.length === 0) {
+            if (this.props.listOfComments.length === 0 || !this.props.showComments) {
                 return null;
             } else {
-                var allComments = this.state.listOfComments.map(function (element, index) {
+                var allComments = this.props.listOfComments.map(function (element, index) {
 
                     // call the function and calculate time from publication
                     var published = _this3.timeFromPublication(_this3.state.currentTimeCounter, element.timeCounter);

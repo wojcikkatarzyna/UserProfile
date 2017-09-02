@@ -6,7 +6,6 @@ class ListOfComments extends React.Component{
         super(props);
         this.state = {
             currentTimeCounter : Date.now(),
-            listOfComments : [],
         };
     }
 
@@ -36,15 +35,6 @@ class ListOfComments extends React.Component{
                 currentTimeCounter : Date.now(),
             });
         }, 60000);
-
-        // save comments from JSON file to array in state
-        fetch('http://localhost:3000/comments')
-        .then(r => r.json())
-        .then( response =>{
-            this.setState({
-                listOfComments : response,
-            })
-        })
     }
 
     componentWillUnmount() {
@@ -53,10 +43,10 @@ class ListOfComments extends React.Component{
 
     render(){
 
-        if (this.state.listOfComments.length === 0) {
+        if ((this.props.listOfComments.length === 0) || (!this.props.showComments)) {
             return null;
         } else {
-            const allComments = this.state.listOfComments.map( (element, index) => {
+            const allComments = this.props.listOfComments.map( (element, index) => {
 
                 // call the function and calculate time from publication
                 const published = this.timeFromPublication(this.state.currentTimeCounter, element.timeCounter);
