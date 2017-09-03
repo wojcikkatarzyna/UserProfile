@@ -1,0 +1,28 @@
+section.comments{
+    width: 88vw;
+    // height: 74vw;
+    background: $background_color2;
+    box-shadow: 0 0 4px 0 rgba(172,172,172,0.50);
+    border-radius: 5px;
+    margin: 0 auto;
+    padding-top:  8vw;
+    header{
+        text-align: center;
+        line-height: 18px;
+        font-size: 14px;
+        color: $main_color;
+        text-decoration: underline;
+    }
+    footer{
+        padding-left: 8vw;
+        margin-top: 5vw;
+        input{
+            border: none;
+            border-bottom: 2px solid $support_color;
+            width: 65vw;
+            &::placeholder{
+                font-size: 18px;
+            }
+        }
+    }
+}

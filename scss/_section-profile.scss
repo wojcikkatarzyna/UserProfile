@@ -1,53 +1,92 @@
+%center{
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
 section.profile{
     width: 88vw;
+    height: 74vw;
     background: $background_color2;
-    margin: 10px auto;
+    box-shadow: 0 0 4px 0 rgba(172,172,172,0.50);
+    border-radius: 5px;
+    margin: 11vw auto;
+    margin-bottom: 5vw;
+    text-align: center;
     header{
+        position: relative;
+        height: 25vw;
         img{
             width: 22vw;
             height: 22vw;
             border-radius: 50%;
+            position: absolute;
+            top: -15vw;
+            @extend %center;
         }
         div{
-
-        }
-        span{
-            color: #D9D9D9;
-            height: 11px;
+            width: 3vw;
+            height: 3vw;
+            color: $main_color;
+            position: absolute;
+            top: 4vw;
+            right: 4vw;
+            font-size: 10px;
         }
         h1{
             line-height: 22px;
-            height: 18px;
+            font-size: 18px;
             color: $names_color;
+            position: absolute;
+            top: 12vw;
+            @extend %center;
+            span{
+                color: #D9D9D9;
+                height: 11px;
+            }
         }
         h2{
             line-height: 15px;
-            height: 12px;
+            font-size: 12px;
             color: $support_color;
+            position: absolute;
+            top: 19vw;
+            @extend %center;
         }
     }
     main{
+        display: flex;
+        flex-wrap: wrap;
+        height: 49vw;
         div{
             width: 33.33%;
+            margin-top: 9vw;
+            &:nth-of-type(2){
+                border-right: 1px solid rgba(59,59,59,0.1);
+                border-left: 1px solid rgba(59,59,59,0.1);
+            }
             h3{
                 line-height: 29px;
-                height: 24px;
+                font-size: 24px;
                 color: $main_color;
             }
             h4{
-                height: 10px;
+                font-size: 10px;
                 color: $support_color;
             }
         }
         button{
             line-height: 18px;
-            height: 14px;
+            font-size: 14px;
             color: white;
             width: 90vw;
             height: 15vw;
             border-radius: 100px;
             background: $main_color;
             font-weight: bold;
+            margin-top: 7vw;
+            box-shadow: none;
         }
     }
 }

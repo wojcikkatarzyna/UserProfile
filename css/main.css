@@ -191,43 +191,109 @@ input[type=button] {
   display: block;
   clear: both; }
 
+section.profile header img, section.profile header h1, section.profile header h2 {
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0; }
+
 section.profile {
   width: 88vw;
+  height: 74vw;
   background: #FFFFFF;
-  margin: 10px auto; }
-  section.profile header img {
-    width: 22vw;
-    height: 22vw;
-    border-radius: 50%; }
-  section.profile header span {
-    color: #D9D9D9;
-    height: 11px; }
-  section.profile header h1 {
-    line-height: 22px;
-    height: 18px;
-    color: #002C71; }
-  section.profile header h2 {
-    line-height: 15px;
-    height: 12px;
-    color: #8298B9; }
-  section.profile main div {
-    width: 33.33%; }
-    section.profile main div h3 {
-      line-height: 29px;
-      height: 24px;
-      color: #FFA640; }
-    section.profile main div h4 {
-      height: 10px;
-      color: #8298B9; }
-  section.profile main button {
+  box-shadow: 0 0 4px 0 rgba(172, 172, 172, 0.5);
+  border-radius: 5px;
+  margin: 11vw auto;
+  margin-bottom: 5vw;
+  text-align: center; }
+  section.profile header {
+    position: relative;
+    height: 25vw; }
+    section.profile header img {
+      width: 22vw;
+      height: 22vw;
+      border-radius: 50%;
+      position: absolute;
+      top: -15vw; }
+    section.profile header div {
+      width: 3vw;
+      height: 3vw;
+      color: #FFA640;
+      position: absolute;
+      top: 4vw;
+      right: 4vw;
+      font-size: 10px; }
+    section.profile header h1 {
+      line-height: 22px;
+      font-size: 18px;
+      color: #002C71;
+      position: absolute;
+      top: 12vw; }
+      section.profile header h1 span {
+        color: #D9D9D9;
+        height: 11px; }
+    section.profile header h2 {
+      line-height: 15px;
+      font-size: 12px;
+      color: #8298B9;
+      position: absolute;
+      top: 19vw; }
+  section.profile main {
+    display: flex;
+    flex-wrap: wrap;
+    height: 49vw; }
+    section.profile main div {
+      width: 33.33%;
+      margin-top: 9vw; }
+      section.profile main div:nth-of-type(2) {
+        border-right: 1px solid rgba(59, 59, 59, 0.1);
+        border-left: 1px solid rgba(59, 59, 59, 0.1); }
+      section.profile main div h3 {
+        line-height: 29px;
+        font-size: 24px;
+        color: #FFA640; }
+      section.profile main div h4 {
+        font-size: 10px;
+        color: #8298B9; }
+    section.profile main button {
+      line-height: 18px;
+      font-size: 14px;
+      color: white;
+      width: 90vw;
+      height: 15vw;
+      border-radius: 100px;
+      background: #FFA640;
+      font-weight: bold;
+      margin-top: 7vw;
+      box-shadow: none; }
+
+section.comments {
+  width: 88vw;
+  background: #FFFFFF;
+  box-shadow: 0 0 4px 0 rgba(172, 172, 172, 0.5);
+  border-radius: 5px;
+  margin: 0 auto;
+  padding-top: 8vw; }
+  section.comments header {
+    text-align: center;
     line-height: 18px;
-    height: 14px;
-    color: white;
-    width: 90vw;
-    height: 15vw;
-    border-radius: 100px;
-    background: #FFA640;
-    font-weight: bold; }
+    font-size: 14px;
+    color: #FFA640;
+    text-decoration: underline; }
+  section.comments footer {
+    padding-left: 8vw;
+    margin-top: 5vw; }
+    section.comments footer input {
+      border: none;
+      border-bottom: 2px solid #8298B9;
+      width: 65vw; }
+      section.comments footer input::placeholder {
+        font-size: 18px; }
+
+div.singleComment {
+  padding-left: 8vw;
+  margin-top: 5vw;
+  border-bottom: 1px solid #EBEBEB; }
 
 * {
   font-family: 'Montserrat', sans-serif; }
