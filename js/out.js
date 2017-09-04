@@ -23285,7 +23285,7 @@ var Comments = function (_React$Component) {
             if (this.state.loading) {
                 return _react2.default.createElement(
                     'div',
-                    null,
+                    { className: 'loading' },
                     'Please, wait a minute...'
                 );
             } else {
@@ -23397,7 +23397,7 @@ var AddComment = function (_React$Component) {
             return _react2.default.createElement(
                 'footer',
                 { className: 'newComment' },
-                _react2.default.createElement('input', { placeholder: 'Add a comment', onChange: this.handleCommentChange, value: this.state.currentComment }),
+                _react2.default.createElement('textarea', { placeholder: 'Add a comment', onChange: this.handleCommentChange, value: this.state.currentComment }),
                 _react2.default.createElement(
                     'button',
                     { className: 'material-icons', onClick: this.handleSendClick },

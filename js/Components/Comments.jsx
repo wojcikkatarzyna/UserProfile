@@ -38,7 +38,7 @@ class Comments extends React.Component{
 
     render(){
         if (this.state.loading) {
-            return  <div>
+            return  <div className="loading">
                         Please, wait a minute...
                     </div>
         } else {

@@ -16,5 +16,8 @@
         background: $background_color1;
         border-top-right-radius: 5px;
         border-top-left-radius: 5px;
+        @include desktop{
+            height: 18.5vw;
+        }
     }
 }

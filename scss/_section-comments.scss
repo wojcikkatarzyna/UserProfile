@@ -3,6 +3,10 @@ section.comments{
     padding: 8vw 0;
     margin: 5vw auto;
     @extend %boxes;
+    @include desktop{
+        margin: 2vw auto;
+        padding: 5vw 0;
+    }
     header{
         text-align: center;
         line-height: 5.5vw;
@@ -10,6 +14,12 @@ section.comments{
         color: $main_color;
         text-decoration: underline;
         margin-bottom: 3vw;
+        @include desktop{
+            text-align: left;
+            padding-left: 8vw;
+            line-height: 3.5vw;
+            font-size: 3vw;
+        }
     }
     article{
         max-height: 100vw;
@@ -17,6 +27,9 @@ section.comments{
         padding-right: 5vw;
         &::-webkit-scrollbar {
             width: 1.5vw;
+            @include desktop{
+                width: 1vw;
+            }
         }
         &::-webkit-scrollbar-track {
             background: rgba(85,85,85,0.3);
@@ -30,23 +43,35 @@ section.comments{
     footer{
         padding-left: 8vw;
         margin-top: 7vw;
-        input{
+        textarea{
             border: none;
             border-bottom: 2px solid $support_color;
             width: 70vw;
             height: 7vw;
+            @include desktop{
+                height: 5vw;
+            }
             &::placeholder{
-                line-height: 7vw;
+                line-height: 6.5vw;
                 font-size: 5.5vw;
                 color: $support_color;
+                padding-left: 3vw;
+                @include desktop{
+                    line-height: 4.5vw;
+                    font-size: 3.5vw;
+                }
             }
         }
         button{
             background: $background_color1;
             color: $background_color2;
             border-radius: 50%;
-            font-size: 4.5vw;
+            font-size: 4vw;
             padding: 1.5vw;
+            @include desktop{
+                font-size: 2.5vw;
+                padding: 1vw;
+            }
         }
     }
 }

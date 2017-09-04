@@ -5,9 +5,17 @@ section.profile{
     margin-bottom: 5vw;
     text-align: center;
     @extend %boxes;
+    @include desktop{
+        height: 37vw;
+        margin: 7vw auto;
+        margin-bottom: 2vw;
+    }
     header{
         position: relative;
         height: 25vw;
+        @include desktop{
+            height: 22vw;
+        }
         img{
             width: 22vw;
             height: 22vw;
@@ -15,6 +23,13 @@ section.profile{
             position: absolute;
             top: -15vw;
             @extend %center;
+            @include desktop{
+                width: 14vw;
+                height: 14vw;
+                top: 4vw;
+                left: 4vw;
+                margin: 0;
+            }
         }
         div{
             width: 3vw;
@@ -32,6 +47,14 @@ section.profile{
             position: absolute;
             top: 12vw;
             @extend %center;
+            @include desktop{
+                line-height: 4.5vw;
+                font-size: 3.5vw;
+                top: 7vw;
+                padding-left: 21.5vw;
+                margin: 0;
+                text-align: left;
+            }
             span{
                 color: #D9D9D9;
                 height: 3.5vw;
@@ -44,15 +67,31 @@ section.profile{
             position: absolute;
             top: 19vw;
             @extend %center;
+            @include desktop{
+                line-height: 3vw;
+                font-size: 2.5vw;
+                padding-left: 21.5vw;
+                margin: 0;
+                text-align: left;
+                top: 11.5vw;
+            }
         }
     }
     main{
         display: flex;
         flex-wrap: wrap;
         height: 49vw;
+        @include desktop{
+            height: 15vw;
+        }
         div{
             width: 33.33%;
             margin-top: 9vw;
+            @include desktop{
+                width: 22%;
+                margin-top: 0;
+                margin-bottom: 5.5vw;
+            }
             &:nth-of-type(2){
                 border-right: 1px solid rgba(59,59,59,0.1);
                 border-left: 1px solid rgba(59,59,59,0.1);
@@ -61,10 +100,18 @@ section.profile{
                 line-height: 9vw;
                 font-size: 7.5vw;
                 color: $main_color;
+                @include desktop{
+                    line-height: 5vw;
+                    font-size: 5vw;
+                }
             }
             h4{
                 font-size: 3vw;
                 color: $support_color;
+                @include desktop{
+                    font-size: 2vw;
+                    line-height: 2vw;
+                }
             }
         }
         button{
@@ -79,6 +126,13 @@ section.profile{
             margin: 0 auto;
             margin-top: 7vw;
             box-shadow: none;
+            @include desktop{
+                width: 27vw;
+                height: 9vw;
+                line-height: 3.5vw;
+                font-size: 3vw;
+                margin: 0;
+            }
         }
     }
 }

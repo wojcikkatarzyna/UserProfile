@@ -49,7 +49,7 @@ class AddComment extends React.Component{
 
     render(){
         return  <footer className="newComment">
-                    <input placeholder="Add a comment" onChange={this.handleCommentChange} value={this.state.currentComment}/>
+                    <textarea placeholder="Add a comment" onChange={this.handleCommentChange} value={this.state.currentComment}/>
                     <button className="material-icons" onClick={this.handleSendClick}> send </button>
                 </footer>
     }

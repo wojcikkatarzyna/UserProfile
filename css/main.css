@@ -191,13 +191,13 @@ input[type=button] {
   display: block;
   clear: both; }
 
-#app, section.profile header img, section.profile header h1, section.profile header h2 {
+#app, section.profile header img, section.profile header h1, section.profile header h2, .loading {
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0; }
 
-#app, section.profile, section.comments {
+#app, section.profile, section.comments, .loading {
   background: #FFFFFF;
   box-shadow: 0 0 4px 0 rgba(172, 172, 172, 0.5);
   border-radius: 5px; }
@@ -218,6 +218,9 @@ input[type=button] {
     background: #002C71;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px; }
+    @media (min-width: 769px) {
+      #app::before {
+        height: 18.5vw; } }
 
 section.profile {
   width: 88vw;
@@ -225,15 +228,30 @@ section.profile {
   margin: 11vw auto;
   margin-bottom: 5vw;
   text-align: center; }
+  @media (min-width: 769px) {
+    section.profile {
+      height: 37vw;
+      margin: 7vw auto;
+      margin-bottom: 2vw; } }
   section.profile header {
     position: relative;
     height: 25vw; }
+    @media (min-width: 769px) {
+      section.profile header {
+        height: 22vw; } }
     section.profile header img {
       width: 22vw;
       height: 22vw;
       border-radius: 50%;
       position: absolute;
       top: -15vw; }
+      @media (min-width: 769px) {
+        section.profile header img {
+          width: 14vw;
+          height: 14vw;
+          top: 4vw;
+          left: 4vw;
+          margin: 0; } }
     section.profile header div {
       width: 3vw;
       height: 3vw;
@@ -248,6 +266,14 @@ section.profile {
       color: #002C71;
       position: absolute;
       top: 12vw; }
+      @media (min-width: 769px) {
+        section.profile header h1 {
+          line-height: 4.5vw;
+          font-size: 3.5vw;
+          top: 7vw;
+          padding-left: 21.5vw;
+          margin: 0;
+          text-align: left; } }
       section.profile header h1 span {
         color: #D9D9D9;
         height: 3.5vw; }
@@ -257,13 +283,29 @@ section.profile {
       color: #8298B9;
       position: absolute;
       top: 19vw; }
+      @media (min-width: 769px) {
+        section.profile header h2 {
+          line-height: 3vw;
+          font-size: 2.5vw;
+          padding-left: 21.5vw;
+          margin: 0;
+          text-align: left;
+          top: 11.5vw; } }
   section.profile main {
     display: flex;
     flex-wrap: wrap;
     height: 49vw; }
+    @media (min-width: 769px) {
+      section.profile main {
+        height: 15vw; } }
     section.profile main div {
       width: 33.33%;
       margin-top: 9vw; }
+      @media (min-width: 769px) {
+        section.profile main div {
+          width: 22%;
+          margin-top: 0;
+          margin-bottom: 5.5vw; } }
       section.profile main div:nth-of-type(2) {
         border-right: 1px solid rgba(59, 59, 59, 0.1);
         border-left: 1px solid rgba(59, 59, 59, 0.1); }
@@ -271,9 +313,17 @@ section.profile {
         line-height: 9vw;
         font-size: 7.5vw;
         color: #FFA640; }
+        @media (min-width: 769px) {
+          section.profile main div h3 {
+            line-height: 5vw;
+            font-size: 5vw; } }
       section.profile main div h4 {
         font-size: 3vw;
         color: #8298B9; }
+        @media (min-width: 769px) {
+          section.profile main div h4 {
+            font-size: 2vw;
+            line-height: 2vw; } }
     section.profile main button {
       line-height: 5.5vw;
       font-size: 4.5vw;
@@ -286,11 +336,22 @@ section.profile {
       margin: 0 auto;
       margin-top: 7vw;
       box-shadow: none; }
+      @media (min-width: 769px) {
+        section.profile main button {
+          width: 27vw;
+          height: 9vw;
+          line-height: 3.5vw;
+          font-size: 3vw;
+          margin: 0; } }
 
 section.comments {
   width: 88vw;
   padding: 8vw 0;
   margin: 5vw auto; }
+  @media (min-width: 769px) {
+    section.comments {
+      margin: 2vw auto;
+      padding: 5vw 0; } }
   section.comments header {
     text-align: center;
     line-height: 5.5vw;
@@ -298,12 +359,21 @@ section.comments {
     color: #FFA640;
     text-decoration: underline;
     margin-bottom: 3vw; }
+    @media (min-width: 769px) {
+      section.comments header {
+        text-align: left;
+        padding-left: 8vw;
+        line-height: 3.5vw;
+        font-size: 3vw; } }
   section.comments article {
     max-height: 100vw;
     overflow-y: scroll;
     padding-right: 5vw; }
     section.comments article::-webkit-scrollbar {
       width: 1.5vw; }
+      @media (min-width: 769px) {
+        section.comments article::-webkit-scrollbar {
+          width: 1vw; } }
     section.comments article::-webkit-scrollbar-track {
       background: rgba(85, 85, 85, 0.3);
       border-radius: 10px; }
@@ -313,21 +383,33 @@ section.comments {
   section.comments footer {
     padding-left: 8vw;
     margin-top: 7vw; }
-    section.comments footer input {
+    section.comments footer textarea {
       border: none;
       border-bottom: 2px solid #8298B9;
       width: 70vw;
       height: 7vw; }
-      section.comments footer input::placeholder {
-        line-height: 7vw;
+      @media (min-width: 769px) {
+        section.comments footer textarea {
+          height: 5vw; } }
+      section.comments footer textarea::placeholder {
+        line-height: 6.5vw;
         font-size: 5.5vw;
-        color: #8298B9; }
+        color: #8298B9;
+        padding-left: 3vw; }
+        @media (min-width: 769px) {
+          section.comments footer textarea::placeholder {
+            line-height: 4.5vw;
+            font-size: 3.5vw; } }
     section.comments footer button {
       background: #002C71;
       color: #FFFFFF;
       border-radius: 50%;
-      font-size: 4.5vw;
+      font-size: 4vw;
       padding: 1.5vw; }
+      @media (min-width: 769px) {
+        section.comments footer button {
+          font-size: 2.5vw;
+          padding: 1vw; } }
 
 div.singleComment {
   padding-left: 8vw;
@@ -338,18 +420,29 @@ div.singleComment {
     width: 12.5vw;
     height: 12.5vw;
     border-radius: 50%; }
+    @media (min-width: 769px) {
+      div.singleComment img.commentPhoto {
+        width: 8vw;
+        height: 8vw; } }
   div.singleComment div {
     display: flex;
     flex-wrap: wrap;
     width: 87.5vw;
     padding: 4vw 2vw;
     padding-right: 0; }
+    @media (min-width: 769px) {
+      div.singleComment div {
+        padding: 2.5vw 2vw; } }
     div.singleComment div span.commentAuthor {
       width: 50%;
       text-align: left;
       line-height: 5.5vw;
       font-size: 4.5vw;
       color: #002C71; }
+      @media (min-width: 769px) {
+        div.singleComment div span.commentAuthor {
+          line-height: 3.5vw;
+          font-size: 3vw; } }
     div.singleComment div span.commentDate {
       width: 50%;
       text-align: right;
@@ -357,6 +450,10 @@ div.singleComment {
       font-size: 4.5vw;
       color: #002C71;
       opacity: 0.5; }
+      @media (min-width: 769px) {
+        div.singleComment div span.commentDate {
+          line-height: 3.5vw;
+          font-size: 3vw; } }
     div.singleComment div span.commentContent {
       width: 100%;
       text-align: left;
@@ -364,6 +461,10 @@ div.singleComment {
       font-size: 4.5vw;
       color: #444444;
       word-wrap: break-word; }
+      @media (min-width: 769px) {
+        div.singleComment div span.commentContent {
+          line-height: 4vw;
+          font-size: 3vw; } }
 
 * {
   font-family: 'Montserrat', sans-serif; }
