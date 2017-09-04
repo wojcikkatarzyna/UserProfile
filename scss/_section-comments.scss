@@ -1,11 +1,8 @@
 section.comments{
     width: 88vw;
-    // height: 74vw;
-    background: $background_color2;
-    box-shadow: 0 0 4px 0 rgba(172,172,172,0.50);
-    border-radius: 5px;
-    margin: 0 auto;
-    padding-top:  8vw;
+    padding: 8vw 0;
+    margin: 5vw auto;
+    @extend %boxes;
     header{
         text-align: center;
         line-height: 18px;
@@ -20,12 +17,10 @@ section.comments{
         &::-webkit-scrollbar {
             width: 1.5vw;
         }
-
         &::-webkit-scrollbar-track {
             background: rgba(85,85,85,0.3);
             border-radius: 10px;
         }
-
         &::-webkit-scrollbar-thumb {
             background: rgba(0,17,44,0.12);
             border-radius: 10px;
@@ -37,7 +32,14 @@ section.comments{
         input{
             border: none;
             border-bottom: 2px solid $support_color;
-            width: 65vw;
+            width: 70vw;
+        }
+        button{
+            background: $background_color1;
+            color: $background_color2;
+            border-radius: 50%;
+            font-size: 15px;
+            padding: 5px;
         }
     }
 }

@@ -197,12 +197,31 @@ section.profile header img, section.profile header h1, section.profile header h2
   left: 0;
   right: 0; }
 
+#app, section.profile, section.comments {
+  background: #FFFFFF;
+  box-shadow: 0 0 4px 0 rgba(172, 172, 172, 0.5);
+  border-radius: 5px; }
+
+#app {
+  width: 95vw;
+  margin: 5vw auto;
+  position: absolute;
+  z-index: -2; }
+  #app::before {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30vw;
+    content: "";
+    background: #002C71;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px; }
+
 section.profile {
   width: 88vw;
   height: 74vw;
-  background: #FFFFFF;
-  box-shadow: 0 0 4px 0 rgba(172, 172, 172, 0.5);
-  border-radius: 5px;
   margin: 11vw auto;
   margin-bottom: 5vw;
   text-align: center; }
@@ -259,21 +278,19 @@ section.profile {
       line-height: 18px;
       font-size: 14px;
       color: white;
-      width: 90vw;
+      width: 78vw;
       height: 15vw;
       border-radius: 100px;
       background: #FFA640;
       font-weight: bold;
+      margin: 0 auto;
       margin-top: 7vw;
       box-shadow: none; }
 
 section.comments {
   width: 88vw;
-  background: #FFFFFF;
-  box-shadow: 0 0 4px 0 rgba(172, 172, 172, 0.5);
-  border-radius: 5px;
-  margin: 0 auto;
-  padding-top: 8vw; }
+  padding: 8vw 0;
+  margin: 5vw auto; }
   section.comments header {
     text-align: center;
     line-height: 18px;
@@ -298,7 +315,13 @@ section.comments {
     section.comments footer input {
       border: none;
       border-bottom: 2px solid #8298B9;
-      width: 65vw; }
+      width: 70vw; }
+    section.comments footer button {
+      background: #002C71;
+      color: #FFFFFF;
+      border-radius: 50%;
+      font-size: 15px;
+      padding: 5px; }
 
 div.singleComment {
   padding-left: 8vw;
@@ -313,7 +336,8 @@ div.singleComment {
     display: flex;
     flex-wrap: wrap;
     width: 87.5vw;
-    padding-top: 4vw; }
+    padding-top: 4vw;
+    padding-left: 2vw; }
     div.singleComment div span.commentAuthor {
       width: 50%;
       text-align: left;

@@ -1,19 +1,10 @@
-%center{
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-}
-
 section.profile{
     width: 88vw;
     height: 74vw;
-    background: $background_color2;
-    box-shadow: 0 0 4px 0 rgba(172,172,172,0.50);
-    border-radius: 5px;
     margin: 11vw auto;
     margin-bottom: 5vw;
     text-align: center;
+    @extend %boxes;
     header{
         position: relative;
         height: 25vw;
@@ -80,13 +71,14 @@ section.profile{
             line-height: 18px;
             font-size: 14px;
             color: white;
-            width: 90vw;
+            width: 78vw;
             height: 15vw;
             border-radius: 100px;
             background: $main_color;
             font-weight: bold;
+            margin: 0 auto;
             margin-top: 7vw;
-            box-shadow: none;
+            box-shadow: none;          
         }
     }
 }
