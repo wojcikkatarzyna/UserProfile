@@ -13,6 +13,24 @@ section.comments{
         color: $main_color;
         text-decoration: underline;
     }
+    article{
+        max-height: 100vw;
+        overflow-y: scroll;
+        padding-right: 5vw;
+        &::-webkit-scrollbar {
+            width: 1.5vw;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: rgba(85,85,85,0.3);
+            border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: rgba(0,17,44,0.12);
+            border-radius: 10px;
+        }
+    }
     footer{
         padding-left: 8vw;
         margin-top: 5vw;
@@ -20,9 +38,6 @@ section.comments{
             border: none;
             border-bottom: 2px solid $support_color;
             width: 65vw;
-            &::placeholder{
-                font-size: 18px;
-            }
         }
     }
 }

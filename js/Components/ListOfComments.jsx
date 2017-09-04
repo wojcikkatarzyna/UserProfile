@@ -13,17 +13,17 @@ class ListOfComments extends React.Component{
     timeFromPublication(timeNow, timeThen) {
         const timeDifference = timeNow - timeThen;
         if ( timeDifference > 31536000000 ) {
-            return Math.floor(timeDifference/31536000000) + " years ago";
+            return Math.floor(timeDifference/31536000000) + "y";
         } else if ( timeDifference > 2592000000 ) {
-            return Math.floor(timeDifference/2592000000) + " months ago";
+            return Math.floor(timeDifference/2592000000) + "m";
         } else if ( timeDifference > 86400000 ) {
-            return Math.floor(timeDifference/86400000) + " days ago";
+            return Math.floor(timeDifference/86400000) + "d";
         } else if ( timeDifference > 3600000 ) {
-            return Math.floor(timeDifference/3600000) + " hours ago";
+            return Math.floor(timeDifference/3600000) + "h";
         } else if ( timeDifference > 60000 ) {
-            return Math.floor(timeDifference/60000) + " minutes ago";
+            return Math.floor(timeDifference/60000) + " min";
         } else {
-            return Math.floor(timeDifference/1000) + " seconds ago";
+            return Math.floor(timeDifference/1000) + " sec";
         }
     }
 
@@ -53,9 +53,11 @@ class ListOfComments extends React.Component{
 
                 return  <div className="singleComment" key={element.id}>
                             <img className="commentPhoto" src={element.photo}/>
-                            <div className="commentDate"> {published} </div>
-                            <div className="commentAuthor"> {element.author} </div>
-                            <div className="commentContent"> {element.comment} </div>
+                            <div>
+                                <span className="commentAuthor"> {element.author} </span>
+                                <span className="commentDate"> {published} </span>
+                                <span className="commentContent"> {element.comment} </span>
+                            </div>
                         </div>
             })
             return  <article className="CommentsList">

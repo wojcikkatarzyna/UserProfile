@@ -23459,17 +23459,17 @@ var ListOfComments = function (_React$Component) {
         value: function timeFromPublication(timeNow, timeThen) {
             var timeDifference = timeNow - timeThen;
             if (timeDifference > 31536000000) {
-                return Math.floor(timeDifference / 31536000000) + " years ago";
+                return Math.floor(timeDifference / 31536000000) + "y";
             } else if (timeDifference > 2592000000) {
-                return Math.floor(timeDifference / 2592000000) + " months ago";
+                return Math.floor(timeDifference / 2592000000) + "m";
             } else if (timeDifference > 86400000) {
-                return Math.floor(timeDifference / 86400000) + " days ago";
+                return Math.floor(timeDifference / 86400000) + "d";
             } else if (timeDifference > 3600000) {
-                return Math.floor(timeDifference / 3600000) + " hours ago";
+                return Math.floor(timeDifference / 3600000) + "h";
             } else if (timeDifference > 60000) {
-                return Math.floor(timeDifference / 60000) + " minutes ago";
+                return Math.floor(timeDifference / 60000) + " min";
             } else {
-                return Math.floor(timeDifference / 1000) + " seconds ago";
+                return Math.floor(timeDifference / 1000) + " sec";
             }
         }
     }, {
@@ -23509,24 +23509,28 @@ var ListOfComments = function (_React$Component) {
                         _react2.default.createElement('img', { className: 'commentPhoto', src: element.photo }),
                         _react2.default.createElement(
                             'div',
-                            { className: 'commentDate' },
-                            ' ',
-                            published,
-                            ' '
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'commentAuthor' },
-                            ' ',
-                            element.author,
-                            ' '
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'commentContent' },
-                            ' ',
-                            element.comment,
-                            ' '
+                            null,
+                            _react2.default.createElement(
+                                'span',
+                                { className: 'commentAuthor' },
+                                ' ',
+                                element.author,
+                                ' '
+                            ),
+                            _react2.default.createElement(
+                                'span',
+                                { className: 'commentDate' },
+                                ' ',
+                                published,
+                                ' '
+                            ),
+                            _react2.default.createElement(
+                                'span',
+                                { className: 'commentContent' },
+                                ' ',
+                                element.comment,
+                                ' '
+                            )
                         )
                     );
                 });

@@ -280,6 +280,18 @@ section.comments {
     font-size: 14px;
     color: #FFA640;
     text-decoration: underline; }
+  section.comments article {
+    max-height: 100vw;
+    overflow-y: scroll;
+    padding-right: 5vw; }
+    section.comments article::-webkit-scrollbar {
+      width: 1.5vw; }
+    section.comments article::-webkit-scrollbar-track {
+      background: rgba(85, 85, 85, 0.3);
+      border-radius: 10px; }
+    section.comments article::-webkit-scrollbar-thumb {
+      background: rgba(0, 17, 44, 0.12);
+      border-radius: 10px; }
   section.comments footer {
     padding-left: 8vw;
     margin-top: 5vw; }
@@ -287,13 +299,41 @@ section.comments {
       border: none;
       border-bottom: 2px solid #8298B9;
       width: 65vw; }
-      section.comments footer input::placeholder {
-        font-size: 18px; }
 
 div.singleComment {
   padding-left: 8vw;
   margin-top: 5vw;
-  border-bottom: 1px solid #EBEBEB; }
+  border-bottom: 1px solid #EBEBEB;
+  display: flex; }
+  div.singleComment img.commentPhoto {
+    width: 12.5vw;
+    height: 12.5vw;
+    border-radius: 50%; }
+  div.singleComment div {
+    display: flex;
+    flex-wrap: wrap;
+    width: 87.5vw;
+    padding-top: 4vw; }
+    div.singleComment div span.commentAuthor {
+      width: 50%;
+      text-align: left;
+      line-height: 18px;
+      font-size: 14px;
+      color: #002C71; }
+    div.singleComment div span.commentDate {
+      width: 50%;
+      text-align: right;
+      line-height: 18px;
+      font-size: 14px;
+      color: #002C71;
+      opacity: 0.5; }
+    div.singleComment div span.commentContent {
+      width: 100%;
+      text-align: left;
+      line-height: 21px;
+      font-size: 14px;
+      color: #444444;
+      word-wrap: break-word; }
 
 * {
   font-family: 'Montserrat', sans-serif; }

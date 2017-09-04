@@ -2,4 +2,40 @@ div.singleComment{
     padding-left: 8vw;
     margin-top: 5vw;
     border-bottom: 1px solid #EBEBEB;
+    display: flex;
+    img.commentPhoto{
+        width: 12.5vw;
+        height: 12.5vw;
+        border-radius: 50%;
+    }
+    div{
+        display: flex;
+        flex-wrap: wrap;
+        width: 87.5vw;
+        padding-top: 4vw;
+        span.commentAuthor{
+            width: 50%;
+            text-align: left;
+            line-height: 18px;
+            font-size: 14px;
+            color: $names_color;
+        }
+        span.commentDate{
+            width: 50%;
+            text-align: right;
+            line-height: 18px;
+            font-size: 14px;
+            color: #002C71;
+            opacity: 0.5;
+        }
+        span.commentContent{
+            width: 100%;
+            text-align: left;
+            line-height: 21px;
+            font-size: 14px;
+            color: $comments_color;
+            word-wrap: break-word;
+        }
+    }
+
 }
