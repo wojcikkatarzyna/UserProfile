@@ -5,10 +5,11 @@ section.comments{
     @extend %boxes;
     header{
         text-align: center;
-        line-height: 18px;
-        font-size: 14px;
+        line-height: 5.5vw;
+        font-size: 4.5vw;
         color: $main_color;
         text-decoration: underline;
+        margin-bottom: 3vw;
     }
     article{
         max-height: 100vw;
@@ -28,18 +29,24 @@ section.comments{
     }
     footer{
         padding-left: 8vw;
-        margin-top: 5vw;
+        margin-top: 7vw;
         input{
             border: none;
             border-bottom: 2px solid $support_color;
             width: 70vw;
+            height: 7vw;
+            &::placeholder{
+                line-height: 7vw;
+                font-size: 5.5vw;
+                color: $support_color;
+            }
         }
         button{
             background: $background_color1;
             color: $background_color2;
             border-radius: 50%;
-            font-size: 15px;
-            padding: 5px;
+            font-size: 4.5vw;
+            padding: 1.5vw;
         }
     }
 }

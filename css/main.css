@@ -191,7 +191,7 @@ input[type=button] {
   display: block;
   clear: both; }
 
-section.profile header img, section.profile header h1, section.profile header h2 {
+#app, section.profile header img, section.profile header h1, section.profile header h2 {
   margin-left: auto;
   margin-right: auto;
   left: 0;
@@ -241,19 +241,19 @@ section.profile {
       position: absolute;
       top: 4vw;
       right: 4vw;
-      font-size: 10px; }
+      font-size: 3vw; }
     section.profile header h1 {
-      line-height: 22px;
-      font-size: 18px;
+      line-height: 7vw;
+      font-size: 5.5vw;
       color: #002C71;
       position: absolute;
       top: 12vw; }
       section.profile header h1 span {
         color: #D9D9D9;
-        height: 11px; }
+        height: 3.5vw; }
     section.profile header h2 {
-      line-height: 15px;
-      font-size: 12px;
+      line-height: 4.5vw;
+      font-size: 3.75vw;
       color: #8298B9;
       position: absolute;
       top: 19vw; }
@@ -268,15 +268,15 @@ section.profile {
         border-right: 1px solid rgba(59, 59, 59, 0.1);
         border-left: 1px solid rgba(59, 59, 59, 0.1); }
       section.profile main div h3 {
-        line-height: 29px;
-        font-size: 24px;
+        line-height: 9vw;
+        font-size: 7.5vw;
         color: #FFA640; }
       section.profile main div h4 {
-        font-size: 10px;
+        font-size: 3vw;
         color: #8298B9; }
     section.profile main button {
-      line-height: 18px;
-      font-size: 14px;
+      line-height: 5.5vw;
+      font-size: 4.5vw;
       color: white;
       width: 78vw;
       height: 15vw;
@@ -293,10 +293,11 @@ section.comments {
   margin: 5vw auto; }
   section.comments header {
     text-align: center;
-    line-height: 18px;
-    font-size: 14px;
+    line-height: 5.5vw;
+    font-size: 4.5vw;
     color: #FFA640;
-    text-decoration: underline; }
+    text-decoration: underline;
+    margin-bottom: 3vw; }
   section.comments article {
     max-height: 100vw;
     overflow-y: scroll;
@@ -311,17 +312,22 @@ section.comments {
       border-radius: 10px; }
   section.comments footer {
     padding-left: 8vw;
-    margin-top: 5vw; }
+    margin-top: 7vw; }
     section.comments footer input {
       border: none;
       border-bottom: 2px solid #8298B9;
-      width: 70vw; }
+      width: 70vw;
+      height: 7vw; }
+      section.comments footer input::placeholder {
+        line-height: 7vw;
+        font-size: 5.5vw;
+        color: #8298B9; }
     section.comments footer button {
       background: #002C71;
       color: #FFFFFF;
       border-radius: 50%;
-      font-size: 15px;
-      padding: 5px; }
+      font-size: 4.5vw;
+      padding: 1.5vw; }
 
 div.singleComment {
   padding-left: 8vw;
@@ -336,26 +342,26 @@ div.singleComment {
     display: flex;
     flex-wrap: wrap;
     width: 87.5vw;
-    padding-top: 4vw;
-    padding-left: 2vw; }
+    padding: 4vw 2vw;
+    padding-right: 0; }
     div.singleComment div span.commentAuthor {
       width: 50%;
       text-align: left;
-      line-height: 18px;
-      font-size: 14px;
+      line-height: 5.5vw;
+      font-size: 4.5vw;
       color: #002C71; }
     div.singleComment div span.commentDate {
       width: 50%;
       text-align: right;
-      line-height: 18px;
-      font-size: 14px;
+      line-height: 5.5vw;
+      font-size: 4.5vw;
       color: #002C71;
       opacity: 0.5; }
     div.singleComment div span.commentContent {
       width: 100%;
       text-align: left;
-      line-height: 21px;
-      font-size: 14px;
+      line-height: 6.5vw;
+      font-size: 4.5vw;
       color: #444444;
       word-wrap: break-word; }
 

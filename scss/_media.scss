@@ -4,8 +4,20 @@
   }
 }
 
-@mixin mobile{
-  @media (max-width: 768px){
+// @mixin s{
+//   @media (min-width: 769px) and (max-width: 768px) {
+//     @content;
+//   }
+// }
+
+@mixin s{
+  @media (min-width: 545px) and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin xs{
+  @media (max-width: 544px){
     @content;
   }
 }

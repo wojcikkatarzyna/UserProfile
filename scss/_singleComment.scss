@@ -12,31 +12,30 @@ div.singleComment{
         display: flex;
         flex-wrap: wrap;
         width: 87.5vw;
-        padding-top: 4vw;
-        padding-left: 2vw;
+        padding: 4vw 2vw;
+        padding-right: 0;
         span.commentAuthor{
             width: 50%;
             text-align: left;
-            line-height: 18px;
-            font-size: 14px;
+            line-height: 5.5vw;
+            font-size: 4.5vw;
             color: $names_color;
         }
         span.commentDate{
             width: 50%;
             text-align: right;
-            line-height: 18px;
-            font-size: 14px;
+            line-height: 5.5vw;
+            font-size: 4.5vw;
             color: #002C71;
             opacity: 0.5;
         }
         span.commentContent{
             width: 100%;
             text-align: left;
-            line-height: 21px;
-            font-size: 14px;
+            line-height: 6.5vw;
+            font-size: 4.5vw;
             color: $comments_color;
             word-wrap: break-word;
         }
     }
-
 }
