@@ -507,11 +507,12 @@ section.comments {
       border-radius: 10px; }
   section.comments footer {
     padding-left: 8vw;
-    margin-top: 7vw; }
+    margin-top: 7vw;
+    padding-right: 5vw; }
     section.comments footer textarea {
       border: none;
       border-bottom: 2px solid #8298B9;
-      width: 70vw;
+      width: 100%;
       height: 7vw; }
       @media (min-width: 769px) and (max-width: 1024px) {
         section.comments footer textarea {
@@ -532,20 +533,6 @@ section.comments {
           section.comments footer textarea::placeholder {
             line-height: 45px;
             font-size: 35px; } }
-    section.comments footer button {
-      background: #002C71;
-      color: #FFFFFF;
-      border-radius: 50%;
-      font-size: 4vw;
-      padding: 1.5vw; }
-      @media (min-width: 769px) and (max-width: 1024px) {
-        section.comments footer button {
-          font-size: 2.5vw;
-          padding: 1vw; } }
-      @media (min-width: 1025px) {
-        section.comments footer button {
-          font-size: 25px;
-          padding: 1vw; } }
 
 div.singleComment {
   padding-left: 8vw;

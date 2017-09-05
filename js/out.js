@@ -23267,12 +23267,11 @@ var Comments = function (_React$Component) {
         };
 
         _this.handleUpDateList = function (comment) {
-            console.log(_this.state.listOfComments);
-            console.log(comment);
             _this.setState({
                 listOfComments: _this.state.listOfComments.concat(comment),
                 numberOfComments: _this.state.numberOfComments + 1
             });
+            console.log("This is temporary warning, because of updating the window with comments. After reloading the page the warning will dissapear and time of publishing will be correct");
         };
 
         _this.state = {
@@ -23382,36 +23381,36 @@ var AddComment = function (_React$Component) {
             });
         };
 
-        _this.handleSendClick = function (e) {
-            e.preventDefault();
+        _this.handleEnterPress = function (e) {
+            if (e.keyCode === 13) {
+                //create object from current comment
+                var comment = {
+                    author: _this.state.currentUserName,
+                    photo: _this.state.currentUserImage,
+                    comment: _this.state.currentComment,
+                    date: new Date(),
+                    timeCounter: Date.now()
 
-            //create object from current comment
-            var comment = {
-                author: _this.state.currentUserName,
-                photo: _this.state.currentUserImage,
-                comment: _this.state.currentComment,
-                date: new Date(),
-                timeCounter: Date.now()
+                    //post current comment to JSON file
+                };fetch('http://localhost:3000/comments', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(comment)
+                });
 
-                //post current comment to JSON file
-            };fetch('http://localhost:3000/comments', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(comment)
-            });
+                // call function which update list without reloading the page
+                if (typeof _this.props.onUpdate === 'function') {
+                    _this.props.onUpdate(comment);
+                }
 
-            // call function which update list without reloading the page
-            if (typeof _this.props.onUpdate === 'function') {
-                _this.props.onUpdate(comment);
+                // reset add comment input
+                _this.setState({
+                    currentComment: ""
+                });
             }
-
-            // reset add comment input
-            _this.setState({
-                currentComment: ""
-            });
         };
 
         _this.state = {
@@ -23431,12 +23430,7 @@ var AddComment = function (_React$Component) {
             return _react2.default.createElement(
                 'footer',
                 { className: 'newComment' },
-                _react2.default.createElement('textarea', { placeholder: 'Add a comment', onChange: this.handleCommentChange, value: this.state.currentComment }),
-                _react2.default.createElement(
-                    'button',
-                    { className: 'material-icons', onClick: this.handleSendClick },
-                    ' send '
-                )
+                _react2.default.createElement('textarea', { placeholder: 'Add a comment', onChange: this.handleCommentChange, onKeyDown: this.handleEnterPress, value: this.state.currentComment })
             );
         }
     }]);
@@ -23503,7 +23497,7 @@ var ListOfComments = function (_React$Component) {
             } else if (timeDifference > 60000) {
                 return Math.floor(timeDifference / 60000) + " min";
             } else if (timeDifference < 0) {
-                return "0s";
+                return "now";
             } else {
                 return Math.floor(timeDifference / 1000) + " sec";
             }

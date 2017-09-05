@@ -19,43 +19,42 @@ class AddComment extends React.Component{
         })
     }
 
-    handleSendClick = (e) => {
-        e.preventDefault();
+    handleEnterPress = (e) => {
+        if (e.keyCode === 13) {
+            //create object from current comment
+            const comment = {
+                author : this.state.currentUserName,
+                photo : this.state.currentUserImage,
+                comment : this.state.currentComment,
+                date : new Date(),
+                timeCounter : Date.now()
+            }
 
-        //create object from current comment
-        const comment = {
-            author : this.state.currentUserName,
-            photo : this.state.currentUserImage,
-            comment : this.state.currentComment,
-            date : new Date(),
-            timeCounter : Date.now()
+            //post current comment to JSON file
+            fetch('http://localhost:3000/comments', {
+                method : 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body : JSON.stringify(comment)
+            })
+
+            // call function which update list without reloading the page
+            if ( typeof this.props.onUpdate === 'function' ){
+                this.props.onUpdate(comment);
+            }
+
+            // reset add comment input
+            this.setState({
+                currentComment : "",
+            })
         }
-
-        //post current comment to JSON file
-        fetch('http://localhost:3000/comments', {
-            method : 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body : JSON.stringify(comment)
-        })
-
-        // call function which update list without reloading the page
-        if ( typeof this.props.onUpdate === 'function' ){
-            this.props.onUpdate(comment);
-        }
-
-        // reset add comment input
-        this.setState({
-            currentComment : "",
-        })
     }
 
     render(){
         return  <footer className="newComment">
-                    <textarea placeholder="Add a comment" onChange={this.handleCommentChange} value={this.state.currentComment}/>
-                    <button className="material-icons" onClick={this.handleSendClick}> send </button>
+                    <textarea placeholder="Add a comment" onChange={this.handleCommentChange} onKeyDown={this.handleEnterPress} value={this.state.currentComment}/>
                 </footer>
     }
 }

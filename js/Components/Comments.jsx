@@ -38,12 +38,11 @@ class Comments extends React.Component{
 
     //update list without reloading the page
     handleUpDateList = (comment) => {
-        console.log(this.state.listOfComments);
-        console.log(comment);
         this.setState({
             listOfComments : this.state.listOfComments.concat(comment),
             numberOfComments : this.state.numberOfComments + 1,
         })
+        console.log("This is temporary warning, because of updating the window with comments. After reloading the page the warning will dissapear and time of publishing will be correct");
     }
 
     render(){
