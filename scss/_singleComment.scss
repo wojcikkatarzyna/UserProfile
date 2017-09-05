@@ -7,9 +7,13 @@ div.singleComment{
         width: 12.5vw;
         height: 12.5vw;
         border-radius: 50%;
-        @include desktop{
+        @include tablet{
             width: 8vw;
             height: 8vw;
+        }
+        @include desktop{
+            width: 80px;
+            height: 80px;
         }
     }
     div{
@@ -18,8 +22,11 @@ div.singleComment{
         width: 87.5vw;
         padding: 4vw 2vw;
         padding-right: 0;
-        @include desktop{
+        @include tablet{
             padding: 2.5vw 2vw;
+        }
+        @include desktop{
+            padding: 25px 2vw;
         }
         span.commentAuthor{
             width: 50%;
@@ -27,9 +34,13 @@ div.singleComment{
             line-height: 5.5vw;
             font-size: 4.5vw;
             color: $names_color;
-            @include desktop{
+            @include tablet{
                 line-height: 3.5vw;
                 font-size: 3vw;
+            }
+            @include desktop{
+                line-height: 35px;
+                font-size: 30px;
             }
         }
         span.commentDate{
@@ -39,9 +50,13 @@ div.singleComment{
             font-size: 4.5vw;
             color: #002C71;
             opacity: 0.5;
-            @include desktop{
+            @include tablet{
                 line-height: 3.5vw;
                 font-size: 3vw;
+            }
+            @include desktop{
+                line-height: 35px;
+                font-size: 30px;
             }
         }
         span.commentContent{
@@ -51,9 +66,13 @@ div.singleComment{
             font-size: 4.5vw;
             color: $comments_color;
             word-wrap: break-word;
-            @include desktop{
+            @include tablet{
                 line-height: 4vw;
                 font-size: 3vw;
+            }
+            @include desktop{
+                line-height: 40px;
+                font-size: 30px;
             }
         }
     }

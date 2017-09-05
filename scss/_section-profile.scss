@@ -5,16 +5,24 @@ section.profile{
     margin-bottom: 5vw;
     text-align: center;
     @extend %boxes;
-    @include desktop{
+    @include tablet{
         height: 37vw;
         margin: 7vw auto;
         margin-bottom: 2vw;
     }
+    @include desktop{
+        height: 370px;
+        margin: 70px auto;
+        margin-bottom: 20px;
+    }
     header{
         position: relative;
         height: 25vw;
+        @include tablet{
+           height: 22vw;
+       }
         @include desktop{
-            height: 22vw;
+            height: 220px;
         }
         img{
             width: 22vw;
@@ -23,11 +31,18 @@ section.profile{
             position: absolute;
             top: -15vw;
             @extend %center;
-            @include desktop{
+            @include tablet{
                 width: 14vw;
                 height: 14vw;
                 top: 4vw;
                 left: 4vw;
+                margin: 0;
+            }
+            @include desktop{
+                width: 140px;
+                height: 140px;
+                top: 40px;
+                left: 8vw;
                 margin: 0;
             }
         }
@@ -47,10 +62,18 @@ section.profile{
             position: absolute;
             top: 12vw;
             @extend %center;
-            @include desktop{
+            @include tablet{
                 line-height: 4.5vw;
                 font-size: 3.5vw;
                 top: 7vw;
+                padding-left: 21.5vw;
+                margin: 0;
+                text-align: left;
+            }
+            @include desktop{
+                line-height: 45px;
+                font-size: 35px;
+                top: 70px;
                 padding-left: 21.5vw;
                 margin: 0;
                 text-align: left;
@@ -67,7 +90,7 @@ section.profile{
             position: absolute;
             top: 19vw;
             @extend %center;
-            @include desktop{
+            @include tablet{
                 line-height: 3vw;
                 font-size: 2.5vw;
                 padding-left: 21.5vw;
@@ -75,22 +98,38 @@ section.profile{
                 text-align: left;
                 top: 11.5vw;
             }
+            @include desktop{
+                line-height: 30px;
+                font-size: 25px;
+                padding-left: 21.5vw;
+                margin: 0;
+                text-align: left;
+                top: 115px;
+            }
         }
     }
     main{
         display: flex;
         flex-wrap: wrap;
         height: 49vw;
-        @include desktop{
+        @include tablet{
             height: 15vw;
+        }
+        @include desktop{
+            height: 150px;
         }
         div{
             width: 33.33%;
             margin-top: 9vw;
-            @include desktop{
+            @include tablet{
                 width: 22%;
                 margin-top: 0;
                 margin-bottom: 5.5vw;
+            }
+            @include desktop{
+                width: 22%;
+                margin-top: 0;
+                margin-bottom: 27.5px;
             }
             &:nth-of-type(2){
                 border-right: 1px solid rgba(59,59,59,0.1);
@@ -100,17 +139,25 @@ section.profile{
                 line-height: 9vw;
                 font-size: 7.5vw;
                 color: $main_color;
-                @include desktop{
+                @include tablet{
                     line-height: 5vw;
                     font-size: 5vw;
+                }
+                @include desktop{
+                    line-height: 50px;
+                    font-size: 50px;
                 }
             }
             h4{
                 font-size: 3vw;
                 color: $support_color;
-                @include desktop{
+                @include tablet{
                     font-size: 2vw;
                     line-height: 2vw;
+                }
+                @include desktop{
+                    font-size: 20px;
+                    line-height: 20px;
                 }
             }
         }
@@ -126,11 +173,18 @@ section.profile{
             margin: 0 auto;
             margin-top: 7vw;
             box-shadow: none;
-            @include desktop{
+            @include tablet{
                 width: 27vw;
                 height: 9vw;
                 line-height: 3.5vw;
                 font-size: 3vw;
+                margin: 0;
+            }
+            @include desktop{
+                width: 27vw;
+                height: 90px;
+                line-height: 35px;
+                font-size: 30px;
                 margin: 0;
             }
         }

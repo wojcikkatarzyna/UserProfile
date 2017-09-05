@@ -3,9 +3,13 @@ section.comments{
     padding: 8vw 0;
     margin: 5vw auto;
     @extend %boxes;
-    @include desktop{
+    @include tablet{
         margin: 2vw auto;
         padding: 5vw 0;
+    }
+    @include desktop{
+        margin: 20px auto;
+        padding: 50px 0;
     }
     header{
         text-align: center;
@@ -14,11 +18,17 @@ section.comments{
         color: $main_color;
         text-decoration: underline;
         margin-bottom: 3vw;
-        @include desktop{
+        @include tablet{
             text-align: left;
             padding-left: 8vw;
             line-height: 3.5vw;
             font-size: 3vw;
+        }
+        @include desktop{
+            text-align: left;
+            padding-left: 8vw;
+            line-height: 35px;
+            font-size: 30px;
         }
     }
     article{
@@ -27,6 +37,9 @@ section.comments{
         padding-right: 5vw;
         &::-webkit-scrollbar {
             width: 1.5vw;
+            @include tablet{
+                width: 1vw;
+            }
             @include desktop{
                 width: 1vw;
             }
@@ -48,17 +61,24 @@ section.comments{
             border-bottom: 2px solid $support_color;
             width: 70vw;
             height: 7vw;
-            @include desktop{
+            @include tablet{
                 height: 5vw;
+            }
+            @include desktop{
+                height: 50px;
             }
             &::placeholder{
                 line-height: 6.5vw;
                 font-size: 5.5vw;
                 color: $support_color;
                 padding-left: 3vw;
-                @include desktop{
+                @include tablet{
                     line-height: 4.5vw;
                     font-size: 3.5vw;
+                }
+                @include desktop{
+                    line-height: 45px;
+                    font-size: 35px;
                 }
             }
         }
@@ -68,8 +88,12 @@ section.comments{
             border-radius: 50%;
             font-size: 4vw;
             padding: 1.5vw;
-            @include desktop{
+            @include tablet{
                 font-size: 2.5vw;
+                padding: 1vw;
+            }
+            @include desktop{
+                font-size: 25px;
                 padding: 1vw;
             }
         }

@@ -207,6 +207,9 @@ input[type=button] {
   margin: 5vw auto;
   position: absolute;
   z-index: -2; }
+  @media (min-width: 1025px) {
+    #app {
+      margin: 20px auto; } }
   #app::before {
     position: absolute;
     z-index: -1;
@@ -218,9 +221,12 @@ input[type=button] {
     background: #002C71;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px; }
-    @media (min-width: 769px) {
+    @media (min-width: 769px) and (max-width: 1024px) {
       #app::before {
         height: 18.5vw; } }
+    @media (min-width: 1025px) {
+      #app::before {
+        height: 185px; } }
 
 section.profile {
   width: 88vw;
@@ -228,29 +234,44 @@ section.profile {
   margin: 11vw auto;
   margin-bottom: 5vw;
   text-align: center; }
-  @media (min-width: 769px) {
+  @media (min-width: 769px) and (max-width: 1024px) {
     section.profile {
       height: 37vw;
       margin: 7vw auto;
       margin-bottom: 2vw; } }
+  @media (min-width: 1025px) {
+    section.profile {
+      height: 370px;
+      margin: 70px auto;
+      margin-bottom: 20px; } }
   section.profile header {
     position: relative;
     height: 25vw; }
-    @media (min-width: 769px) {
+    @media (min-width: 769px) and (max-width: 1024px) {
       section.profile header {
         height: 22vw; } }
+    @media (min-width: 1025px) {
+      section.profile header {
+        height: 220px; } }
     section.profile header img {
       width: 22vw;
       height: 22vw;
       border-radius: 50%;
       position: absolute;
       top: -15vw; }
-      @media (min-width: 769px) {
+      @media (min-width: 769px) and (max-width: 1024px) {
         section.profile header img {
           width: 14vw;
           height: 14vw;
           top: 4vw;
           left: 4vw;
+          margin: 0; } }
+      @media (min-width: 1025px) {
+        section.profile header img {
+          width: 140px;
+          height: 140px;
+          top: 40px;
+          left: 8vw;
           margin: 0; } }
     section.profile header div {
       width: 3vw;
@@ -266,11 +287,19 @@ section.profile {
       color: #002C71;
       position: absolute;
       top: 12vw; }
-      @media (min-width: 769px) {
+      @media (min-width: 769px) and (max-width: 1024px) {
         section.profile header h1 {
           line-height: 4.5vw;
           font-size: 3.5vw;
           top: 7vw;
+          padding-left: 21.5vw;
+          margin: 0;
+          text-align: left; } }
+      @media (min-width: 1025px) {
+        section.profile header h1 {
+          line-height: 45px;
+          font-size: 35px;
+          top: 70px;
           padding-left: 21.5vw;
           margin: 0;
           text-align: left; } }
@@ -283,7 +312,7 @@ section.profile {
       color: #8298B9;
       position: absolute;
       top: 19vw; }
-      @media (min-width: 769px) {
+      @media (min-width: 769px) and (max-width: 1024px) {
         section.profile header h2 {
           line-height: 3vw;
           font-size: 2.5vw;
@@ -291,21 +320,37 @@ section.profile {
           margin: 0;
           text-align: left;
           top: 11.5vw; } }
+      @media (min-width: 1025px) {
+        section.profile header h2 {
+          line-height: 30px;
+          font-size: 25px;
+          padding-left: 21.5vw;
+          margin: 0;
+          text-align: left;
+          top: 115px; } }
   section.profile main {
     display: flex;
     flex-wrap: wrap;
     height: 49vw; }
-    @media (min-width: 769px) {
+    @media (min-width: 769px) and (max-width: 1024px) {
       section.profile main {
         height: 15vw; } }
+    @media (min-width: 1025px) {
+      section.profile main {
+        height: 150px; } }
     section.profile main div {
       width: 33.33%;
       margin-top: 9vw; }
-      @media (min-width: 769px) {
+      @media (min-width: 769px) and (max-width: 1024px) {
         section.profile main div {
           width: 22%;
           margin-top: 0;
           margin-bottom: 5.5vw; } }
+      @media (min-width: 1025px) {
+        section.profile main div {
+          width: 22%;
+          margin-top: 0;
+          margin-bottom: 27.5px; } }
       section.profile main div:nth-of-type(2) {
         border-right: 1px solid rgba(59, 59, 59, 0.1);
         border-left: 1px solid rgba(59, 59, 59, 0.1); }
@@ -313,17 +358,25 @@ section.profile {
         line-height: 9vw;
         font-size: 7.5vw;
         color: #FFA640; }
-        @media (min-width: 769px) {
+        @media (min-width: 769px) and (max-width: 1024px) {
           section.profile main div h3 {
             line-height: 5vw;
             font-size: 5vw; } }
+        @media (min-width: 1025px) {
+          section.profile main div h3 {
+            line-height: 50px;
+            font-size: 50px; } }
       section.profile main div h4 {
         font-size: 3vw;
         color: #8298B9; }
-        @media (min-width: 769px) {
+        @media (min-width: 769px) and (max-width: 1024px) {
           section.profile main div h4 {
             font-size: 2vw;
             line-height: 2vw; } }
+        @media (min-width: 1025px) {
+          section.profile main div h4 {
+            font-size: 20px;
+            line-height: 20px; } }
     section.profile main button {
       line-height: 5.5vw;
       font-size: 4.5vw;
@@ -336,22 +389,33 @@ section.profile {
       margin: 0 auto;
       margin-top: 7vw;
       box-shadow: none; }
-      @media (min-width: 769px) {
+      @media (min-width: 769px) and (max-width: 1024px) {
         section.profile main button {
           width: 27vw;
           height: 9vw;
           line-height: 3.5vw;
           font-size: 3vw;
           margin: 0; } }
+      @media (min-width: 1025px) {
+        section.profile main button {
+          width: 27vw;
+          height: 90px;
+          line-height: 35px;
+          font-size: 30px;
+          margin: 0; } }
 
 section.comments {
   width: 88vw;
   padding: 8vw 0;
   margin: 5vw auto; }
-  @media (min-width: 769px) {
+  @media (min-width: 769px) and (max-width: 1024px) {
     section.comments {
       margin: 2vw auto;
       padding: 5vw 0; } }
+  @media (min-width: 1025px) {
+    section.comments {
+      margin: 20px auto;
+      padding: 50px 0; } }
   section.comments header {
     text-align: center;
     line-height: 5.5vw;
@@ -359,19 +423,28 @@ section.comments {
     color: #FFA640;
     text-decoration: underline;
     margin-bottom: 3vw; }
-    @media (min-width: 769px) {
+    @media (min-width: 769px) and (max-width: 1024px) {
       section.comments header {
         text-align: left;
         padding-left: 8vw;
         line-height: 3.5vw;
         font-size: 3vw; } }
+    @media (min-width: 1025px) {
+      section.comments header {
+        text-align: left;
+        padding-left: 8vw;
+        line-height: 35px;
+        font-size: 30px; } }
   section.comments article {
     max-height: 100vw;
     overflow-y: scroll;
     padding-right: 5vw; }
     section.comments article::-webkit-scrollbar {
       width: 1.5vw; }
-      @media (min-width: 769px) {
+      @media (min-width: 769px) and (max-width: 1024px) {
+        section.comments article::-webkit-scrollbar {
+          width: 1vw; } }
+      @media (min-width: 1025px) {
         section.comments article::-webkit-scrollbar {
           width: 1vw; } }
     section.comments article::-webkit-scrollbar-track {
@@ -388,27 +461,38 @@ section.comments {
       border-bottom: 2px solid #8298B9;
       width: 70vw;
       height: 7vw; }
-      @media (min-width: 769px) {
+      @media (min-width: 769px) and (max-width: 1024px) {
         section.comments footer textarea {
           height: 5vw; } }
+      @media (min-width: 1025px) {
+        section.comments footer textarea {
+          height: 50px; } }
       section.comments footer textarea::placeholder {
         line-height: 6.5vw;
         font-size: 5.5vw;
         color: #8298B9;
         padding-left: 3vw; }
-        @media (min-width: 769px) {
+        @media (min-width: 769px) and (max-width: 1024px) {
           section.comments footer textarea::placeholder {
             line-height: 4.5vw;
             font-size: 3.5vw; } }
+        @media (min-width: 1025px) {
+          section.comments footer textarea::placeholder {
+            line-height: 45px;
+            font-size: 35px; } }
     section.comments footer button {
       background: #002C71;
       color: #FFFFFF;
       border-radius: 50%;
       font-size: 4vw;
       padding: 1.5vw; }
-      @media (min-width: 769px) {
+      @media (min-width: 769px) and (max-width: 1024px) {
         section.comments footer button {
           font-size: 2.5vw;
+          padding: 1vw; } }
+      @media (min-width: 1025px) {
+        section.comments footer button {
+          font-size: 25px;
           padding: 1vw; } }
 
 div.singleComment {
@@ -420,29 +504,40 @@ div.singleComment {
     width: 12.5vw;
     height: 12.5vw;
     border-radius: 50%; }
-    @media (min-width: 769px) {
+    @media (min-width: 769px) and (max-width: 1024px) {
       div.singleComment img.commentPhoto {
         width: 8vw;
         height: 8vw; } }
+    @media (min-width: 1025px) {
+      div.singleComment img.commentPhoto {
+        width: 80px;
+        height: 80px; } }
   div.singleComment div {
     display: flex;
     flex-wrap: wrap;
     width: 87.5vw;
     padding: 4vw 2vw;
     padding-right: 0; }
-    @media (min-width: 769px) {
+    @media (min-width: 769px) and (max-width: 1024px) {
       div.singleComment div {
         padding: 2.5vw 2vw; } }
+    @media (min-width: 1025px) {
+      div.singleComment div {
+        padding: 25px 2vw; } }
     div.singleComment div span.commentAuthor {
       width: 50%;
       text-align: left;
       line-height: 5.5vw;
       font-size: 4.5vw;
       color: #002C71; }
-      @media (min-width: 769px) {
+      @media (min-width: 769px) and (max-width: 1024px) {
         div.singleComment div span.commentAuthor {
           line-height: 3.5vw;
           font-size: 3vw; } }
+      @media (min-width: 1025px) {
+        div.singleComment div span.commentAuthor {
+          line-height: 35px;
+          font-size: 30px; } }
     div.singleComment div span.commentDate {
       width: 50%;
       text-align: right;
@@ -450,10 +545,14 @@ div.singleComment {
       font-size: 4.5vw;
       color: #002C71;
       opacity: 0.5; }
-      @media (min-width: 769px) {
+      @media (min-width: 769px) and (max-width: 1024px) {
         div.singleComment div span.commentDate {
           line-height: 3.5vw;
           font-size: 3vw; } }
+      @media (min-width: 1025px) {
+        div.singleComment div span.commentDate {
+          line-height: 35px;
+          font-size: 30px; } }
     div.singleComment div span.commentContent {
       width: 100%;
       text-align: left;
@@ -461,10 +560,14 @@ div.singleComment {
       font-size: 4.5vw;
       color: #444444;
       word-wrap: break-word; }
-      @media (min-width: 769px) {
+      @media (min-width: 769px) and (max-width: 1024px) {
         div.singleComment div span.commentContent {
           line-height: 4vw;
           font-size: 3vw; } }
+      @media (min-width: 1025px) {
+        div.singleComment div span.commentContent {
+          line-height: 40px;
+          font-size: 30px; } }
 
 * {
   font-family: 'Montserrat', sans-serif; }

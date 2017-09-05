@@ -5,6 +5,9 @@
     z-index: -2;
     @extend %boxes;
     @extend %center;
+    @include desktop{
+        margin: 20px auto;
+    }
     &::before{
         position: absolute;
         z-index: -1;
@@ -16,8 +19,12 @@
         background: $background_color1;
         border-top-right-radius: 5px;
         border-top-left-radius: 5px;
-        @include desktop{
+        @include tablet{
             height: 18.5vw;
         }
+        @include desktop{
+            height: 185px;
+        }
+
     }
 }
