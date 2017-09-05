@@ -1,4 +1,8 @@
 .loading{
+    width: 88vw;
+    margin: 5vw auto;
+    padding: 20px 0;
+    font-size: 4.5vw;
     @extend %boxes;
     @extend %center;
 }
