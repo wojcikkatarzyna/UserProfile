@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Alert from './Alert.jsx';
+
 class UserInfo extends React.Component{
     constructor(props){
         super(props);
@@ -9,13 +11,23 @@ class UserInfo extends React.Component{
             userSurname : "Specter",
             userCity : "New York",
             userCountry : "USA",
+            displayAlert : false,
         };
     }
 
     // display url of website
     handleShareClick = (e) => {
         e.preventDefault();
-        alert("Url : "+document.location);
+        this.setState({
+            displayAlert : true,
+        })
+    }
+
+    //close alert with url of website
+    hadleAlertClose = () => {
+        this.setState({
+            displayAlert : false,
+        })
     }
 
     //call a function which increase number of likess
@@ -30,6 +42,7 @@ class UserInfo extends React.Component{
         return  <header>
                     <img src="images/Harvey.jpg" alt="User Photo"/>
                     <div className="material-icons" onClick={this.handleShareClick}> share </div>
+                    <Alert displayAlert={this.state.displayAlert} onClose={this.hadleAlertClose}/>
                     <h1 className="name">
                         {this.state.userName}
                         {this.state.userSurname}

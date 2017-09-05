@@ -23002,6 +23002,10 @@ var _reactDom = __webpack_require__(16);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _Alert = __webpack_require__(197);
+
+var _Alert2 = _interopRequireDefault(_Alert);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -23020,7 +23024,15 @@ var UserInfo = function (_React$Component) {
 
         _this.handleShareClick = function (e) {
             e.preventDefault();
-            alert("Url : " + document.location);
+            _this.setState({
+                displayAlert: true
+            });
+        };
+
+        _this.hadleAlertClose = function () {
+            _this.setState({
+                displayAlert: false
+            });
         };
 
         _this.handleHeartClick = function (e) {
@@ -23034,12 +23046,16 @@ var UserInfo = function (_React$Component) {
             userName: "Harvey ",
             userSurname: "Specter",
             userCity: "New York",
-            userCountry: "USA"
+            userCountry: "USA",
+            displayAlert: false
         };
         return _this;
     }
 
     // display url of website
+
+
+    //close alert with url of website
 
 
     //call a function which increase number of likess
@@ -23057,6 +23073,7 @@ var UserInfo = function (_React$Component) {
                     { className: 'material-icons', onClick: this.handleShareClick },
                     ' share '
                 ),
+                _react2.default.createElement(_Alert2.default, { displayAlert: this.state.displayAlert, onClose: this.hadleAlertClose }),
                 _react2.default.createElement(
                     'h1',
                     { className: 'name' },
@@ -23547,6 +23564,90 @@ var ListOfComments = function (_React$Component) {
 }(_react2.default.Component);
 
 module.exports = ListOfComments;
+
+/***/ }),
+/* 192 */,
+/* 193 */,
+/* 194 */,
+/* 195 */,
+/* 196 */,
+/* 197 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(14);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(16);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Alert = function (_React$Component) {
+    _inherits(Alert, _React$Component);
+
+    function Alert(props) {
+        _classCallCheck(this, Alert);
+
+        var _this = _possibleConstructorReturn(this, (Alert.__proto__ || Object.getPrototypeOf(Alert)).call(this, props));
+
+        _this.handleCloseClick = function (e) {
+            e.preventDefault();
+            if (typeof _this.props.onClose === 'function') {
+                _this.props.onClose();
+            }
+        };
+
+        _this.state = {
+            url: document.location
+        };
+        return _this;
+    }
+
+    //call function onClose which close alert with url of website
+
+
+    _createClass(Alert, [{
+        key: 'render',
+        value: function render() {
+            if (this.props.displayAlert) {
+                return _react2.default.createElement(
+                    'div',
+                    { className: 'alert' },
+                    _react2.default.createElement(
+                        'span',
+                        null,
+                        ' Share: '
+                    ),
+                    _react2.default.createElement('input', { value: this.state.url }),
+                    _react2.default.createElement(
+                        'button',
+                        { onClick: this.handleCloseClick },
+                        ' X '
+                    )
+                );
+            } else {
+                return null;
+            }
+        }
+    }]);
+
+    return Alert;
+}(_react2.default.Component);
+
+module.exports = Alert;
 
 /***/ })
 /******/ ]);
