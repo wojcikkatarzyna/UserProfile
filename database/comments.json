@@ -3,25 +3,25 @@
     {
       "author": "Mike Ross",
       "photo": "images/Mike.jpg",
-      "comment": "Aenean lacus vestibulum ligula. Phasellus sem. Cras egestas volutpat. Nam dui convallis tellus. Proin sed lorem pretium eu, elit. Mauris tempor magna. Vestibulum risus arcu vitae dui quis euismod quam et magnis dis parturient montes, nascetur ridiculus mus. Donec scelerisque vel, lacinia quam molestie a, blandit sed, imperdiet aliquam ut, lobortis urna. Nunc vitae turpis luctus ut, turpis. Nullam viverra est sit amet leo. Suspendisse eu lorem. Suspendisse dolor nibh, dictum ut, rutrum lorem. Maecenas nunc. Fusce vitae pede id leo felis sed nulla quam in neque. Donec a purus sit amet tellus porttitor vel, wisi. Praesent eu lorem. Sed.",
-      "date": "2017-09-04T09:19:16.449Z",
-      "timeCounter": 1504516756449,
+      "comment": "pierwsze",
+      "date": "2017-09-05T11:35:33.311Z",
+      "timeCounter": 1504611333311,
       "id": 1
     },
     {
       "author": "Mike Ross",
       "photo": "images/Mike.jpg",
-      "comment": "Curae, Cras hendrerit sagittis. Nulla facilisi. Class aptent taciti sociosqu ad litora torquent per inceptos hymenaeos. Etiam dolor. Praesent sit amet dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Pellentesque laoreet sit amet tempor venenatis nulla sed dolor magna, porttitor elementum. Nunc vulputate. Donec odio eu fermentum sed, ullamcorper quam. Phasellus quis diam. Vestibulum fermentum. Vivamus consequat faucibus, justo at est. Integer ultrices posuere sed, neque. Suspendisse adipiscing. Nulla facilisi. Nam diam. Aenean ac nibh nulla bibendum risus. Sed vehicula non, ipsum. Nunc sed est. Aliquam posuere cubilia Curae, Sed accumsan eget, tortor. Phasellus.",
-      "date": "2017-09-04T09:19:29.015Z",
-      "timeCounter": 1504516769015,
+      "comment": "drugi\n",
+      "date": "2017-09-05T11:39:20.835Z",
+      "timeCounter": 1504611560835,
       "id": 2
     },
     {
       "author": "Mike Ross",
       "photo": "images/Mike.jpg",
-      "comment": "Suspendisse fermentum sapien sed sem. Nulla augue pulvinar augue. Donec porttitor eros, aliquam sapien. Praesent ante. Proin rhoncus laoreet fermentum. Proin nonummy gravida. Pellentesque eget lectus luctus nulla luctus quam congue ut, turpis. Nam feugiat pulvinar. Nulla facilisis at, nisl. Nam rhoncus, dolor accumsan urna, pellentesque sagittis vel, lacinia neque. Etiam mollis pulvinar. Pellentesque suscipit sit amet elit est, et arcu. Duis elementum in, pulvinar felis, ullamcorper risus. Nulla convallis quam elit purus, nec enim ac eros. Aliquam vestibulum wisi nunc, mollis pulvinar. Donec scelerisque sed, sodales pretium venenatis. Donec aliquet congue at, imperdiet ut, semper dui, eget sapien sapien.",
-      "date": "2017-09-04T09:19:45.185Z",
-      "timeCounter": 1504516785185,
+      "comment": "trzeci",
+      "date": "2017-09-05T11:40:04.293Z",
+      "timeCounter": 1504611604293,
       "id": 3
     }
   ]

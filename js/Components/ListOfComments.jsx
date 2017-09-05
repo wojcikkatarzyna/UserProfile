@@ -22,6 +22,8 @@ class ListOfComments extends React.Component{
             return Math.floor(timeDifference/3600000) + "h";
         } else if ( timeDifference > 60000 ) {
             return Math.floor(timeDifference/60000) + " min";
+        } else if ( timeDifference < 0) {
+            return "0s";
         } else {
             return Math.floor(timeDifference/1000) + " sec";
         }

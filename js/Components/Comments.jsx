@@ -36,6 +36,16 @@ class Comments extends React.Component{
         })
     }
 
+    //update list without reloading the page
+    handleUpDateList = (comment) => {
+        console.log(this.state.listOfComments);
+        console.log(comment);
+        this.setState({
+            listOfComments : this.state.listOfComments.concat(comment),
+            numberOfComments : this.state.numberOfComments + 1,
+        })
+    }
+
     render(){
         if (this.state.loading) {
             return  <div className="loading">
@@ -45,7 +55,7 @@ class Comments extends React.Component{
             return  <section className="comments">
                         <header onClick={this.handleShowHideClick}> {this.state.showComments ? "Hide comments" : "Show comments"}  ( {this.state.numberOfComments} ) </header>
                         <ListOfComments showComments={this.state.showComments} listOfComments={this.state.listOfComments} />
-                        <AddComment />
+                        <AddComment onUpdate={this.handleUpDateList}/>
                     </section>
         }
     }

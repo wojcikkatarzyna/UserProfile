@@ -23266,6 +23266,15 @@ var Comments = function (_React$Component) {
             });
         };
 
+        _this.handleUpDateList = function (comment) {
+            console.log(_this.state.listOfComments);
+            console.log(comment);
+            _this.setState({
+                listOfComments: _this.state.listOfComments.concat(comment),
+                numberOfComments: _this.state.numberOfComments + 1
+            });
+        };
+
         _this.state = {
             listOfComments: [],
             numberOfComments: 0,
@@ -23296,6 +23305,9 @@ var Comments = function (_React$Component) {
                 });
             });
         }
+
+        //update list without reloading the page
+
     }, {
         key: 'render',
         value: function render() {
@@ -23319,7 +23331,7 @@ var Comments = function (_React$Component) {
                         ' ) '
                     ),
                     _react2.default.createElement(_ListOfComments2.default, { showComments: this.state.showComments, listOfComments: this.state.listOfComments }),
-                    _react2.default.createElement(_AddComment2.default, null)
+                    _react2.default.createElement(_AddComment2.default, { onUpdate: this.handleUpDateList })
                 );
             }
         }
@@ -23390,6 +23402,11 @@ var AddComment = function (_React$Component) {
                 },
                 body: JSON.stringify(comment)
             });
+
+            // call function which update list without reloading the page
+            if (typeof _this.props.onUpdate === 'function') {
+                _this.props.onUpdate(comment);
+            }
 
             // reset add comment input
             _this.setState({
@@ -23485,6 +23502,8 @@ var ListOfComments = function (_React$Component) {
                 return Math.floor(timeDifference / 3600000) + "h";
             } else if (timeDifference > 60000) {
                 return Math.floor(timeDifference / 60000) + " min";
+            } else if (timeDifference < 0) {
+                return "0s";
             } else {
                 return Math.floor(timeDifference / 1000) + " sec";
             }
@@ -23631,7 +23650,7 @@ var Alert = function (_React$Component) {
                         null,
                         ' Share: '
                     ),
-                    _react2.default.createElement('input', { value: this.state.url }),
+                    _react2.default.createElement('input', { defaultValue: this.state.url }),
                     _react2.default.createElement(
                         'button',
                         { onClick: this.handleCloseClick },

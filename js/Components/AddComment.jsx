@@ -41,6 +41,11 @@ class AddComment extends React.Component{
             body : JSON.stringify(comment)
         })
 
+        // call function which update list without reloading the page
+        if ( typeof this.props.onUpdate === 'function' ){
+            this.props.onUpdate(comment);
+        }
+
         // reset add comment input
         this.setState({
             currentComment : "",

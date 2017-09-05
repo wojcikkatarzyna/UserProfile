@@ -21,7 +21,7 @@ class Alert extends React.Component{
         if (this.props.displayAlert) {
             return  <div className="alert">
                         <span> Share: </span>
-                        <input value={this.state.url}/>
+                        <input defaultValue={this.state.url}/>
                         <button onClick={this.handleCloseClick}> X </button>
                     </div>
         } else {
