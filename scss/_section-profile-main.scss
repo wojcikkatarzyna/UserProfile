@@ -1,0 +1,89 @@
+section.profile{
+    main{
+        display: flex;
+        flex-wrap: wrap;
+        height: 49vw;
+        @include tablet{
+            height: 15vw;
+        }
+        @include desktop{
+            height: 150px;
+        }
+        div{
+            width: 33.33%;
+            margin-top: 9vw;
+            height: 12vw;
+            @include tablet{
+                width: 22%;
+                margin-top: 0;
+                margin-bottom: 5.5vw;
+                height: 7vw;
+            }
+            @include desktop{
+                width: 22%;
+                margin-top: 0;
+                margin-bottom: 27.5px;
+                height: 70px;
+            }
+            &:nth-of-type(2){
+                border-right: 1px solid rgba(59,59,59,0.1);
+                border-left: 1px solid rgba(59,59,59,0.1);
+            }
+            h3{
+                line-height: 9vw;
+                font-size: 7.5vw;
+                color: $main_color;
+                @include tablet{
+                    line-height: 5vw;
+                    font-size: 5vw;
+                }
+                @include desktop{
+                    line-height: 50px;
+                    font-size: 50px;
+                }
+            }
+            h4{
+                font-size: 3vw;
+                color: $support_color;
+                @include tablet{
+                    font-size: 2vw;
+                    line-height: 2vw;
+                }
+                @include desktop{
+                    font-size: 20px;
+                    line-height: 20px;
+                }
+            }
+        }
+        button{
+            line-height: 5.5vw;
+            font-size: 4.5vw;
+            color: white;
+            width: 78vw;
+            height: 15vw;
+            border-radius: 100px;
+            background: $main_color;
+            font-weight: bold;
+            margin: 0 auto;
+            margin-top: 7vw;
+            box-shadow: none;
+            letter-spacing: 1.5vw;
+            @include tablet{
+                width: 27vw;
+                height: 9vw;
+                line-height: 3.5vw;
+                font-size: 3vw;
+                margin: 0;
+                letter-spacing: 1vw;
+            }
+            @include desktop{
+                width: 27vw;
+                height: 90px;
+                line-height: 35px;
+                font-size: 30px;
+                margin: 0;
+                letter-spacing: 1vw;
+            }
+        }
+    }
+}

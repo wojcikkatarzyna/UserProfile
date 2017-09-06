@@ -380,84 +380,143 @@ section.profile {
           margin: 0;
           text-align: left;
           top: 115px; } }
-  section.profile main {
+
+section.profile header {
+  position: relative; }
+  section.profile header .alert {
+    width: 75vw;
+    height: 6vw;
+    border: 2px solid #002C71;
+    font-size: 2.5vw;
     display: flex;
-    flex-wrap: wrap;
-    height: 49vw; }
+    position: absolute;
+    top: 7vw;
+    right: 7vw; }
     @media (min-width: 769px) and (max-width: 1024px) {
-      section.profile main {
-        height: 15vw; } }
+      section.profile header .alert {
+        top: 1vw;
+        right: 1vw; } }
     @media (min-width: 1025px) {
-      section.profile main {
-        height: 150px; } }
-    section.profile main div {
-      width: 33.33%;
-      margin-top: 9vw; }
-      @media (min-width: 769px) and (max-width: 1024px) {
-        section.profile main div {
-          width: 22%;
-          margin-top: 0;
-          margin-bottom: 5.5vw; } }
+      section.profile header .alert {
+        top: 150px;
+        right: 10px;
+        width: 750px;
+        height: 60px;
+        font-size: 25px; } }
+    section.profile header .alert span {
+      width: 20%;
+      line-height: 6vw;
+      color: #FFA640;
+      font-weight: bold; }
       @media (min-width: 1025px) {
-        section.profile main div {
-          width: 22%;
-          margin-top: 0;
-          margin-bottom: 27.5px; } }
-      section.profile main div:nth-of-type(2) {
-        border-right: 1px solid rgba(59, 59, 59, 0.1);
-        border-left: 1px solid rgba(59, 59, 59, 0.1); }
-      section.profile main div h3 {
-        line-height: 9vw;
-        font-size: 7.5vw;
-        color: #FFA640; }
-        @media (min-width: 769px) and (max-width: 1024px) {
-          section.profile main div h3 {
-            line-height: 5vw;
-            font-size: 5vw; } }
-        @media (min-width: 1025px) {
-          section.profile main div h3 {
-            line-height: 50px;
-            font-size: 50px; } }
-      section.profile main div h4 {
-        font-size: 3vw;
-        color: #8298B9; }
-        @media (min-width: 769px) and (max-width: 1024px) {
-          section.profile main div h4 {
-            font-size: 2vw;
-            line-height: 2vw; } }
-        @media (min-width: 1025px) {
-          section.profile main div h4 {
-            font-size: 20px;
-            line-height: 20px; } }
-    section.profile main button {
-      line-height: 5.5vw;
-      font-size: 4.5vw;
-      color: white;
-      width: 78vw;
-      height: 15vw;
-      border-radius: 100px;
+        section.profile header .alert span {
+          line-height: 60px; } }
+    section.profile header .alert input {
+      height: 4vw;
+      width: 75%;
+      margin: 1vw auto;
+      font-family: 'Montserrat', sans-serif;
+      color: #8298B9; }
+      @media (min-width: 1025px) {
+        section.profile header .alert input {
+          height: 40px;
+          margin: 10px auto; } }
+    section.profile header .alert button {
+      width: 4vw;
+      height: 4vw;
+      margin: 1vw;
       background: #FFA640;
+      color: #FFFFFF;
       font-weight: bold;
-      margin: 0 auto;
-      margin-top: 7vw;
-      box-shadow: none;
-      letter-spacing: 1.5vw; }
-      @media (min-width: 769px) and (max-width: 1024px) {
-        section.profile main button {
-          width: 27vw;
-          height: 9vw;
-          line-height: 3.5vw;
-          font-size: 3vw;
-          margin: 0;
-          letter-spacing: 1vw; } }
+      font-size: 2vw; }
       @media (min-width: 1025px) {
-        section.profile main button {
-          width: 27vw;
-          height: 90px;
-          line-height: 35px;
-          font-size: 30px;
-          margin: 0;
-          letter-spacing: 1vw; } }
+        section.profile header .alert button {
+          width: 40px;
+          height: 40px;
+          margin: 10px;
+          font-size: 20px; } }
+
+section.profile main {
+  display: flex;
+  flex-wrap: wrap;
+  height: 49vw; }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    section.profile main {
+      height: 15vw; } }
+  @media (min-width: 1025px) {
+    section.profile main {
+      height: 150px; } }
+  section.profile main div {
+    width: 33.33%;
+    margin-top: 9vw;
+    height: 12vw; }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      section.profile main div {
+        width: 22%;
+        margin-top: 0;
+        margin-bottom: 5.5vw;
+        height: 7vw; } }
+    @media (min-width: 1025px) {
+      section.profile main div {
+        width: 22%;
+        margin-top: 0;
+        margin-bottom: 27.5px;
+        height: 70px; } }
+    section.profile main div:nth-of-type(2) {
+      border-right: 1px solid rgba(59, 59, 59, 0.1);
+      border-left: 1px solid rgba(59, 59, 59, 0.1); }
+    section.profile main div h3 {
+      line-height: 9vw;
+      font-size: 7.5vw;
+      color: #FFA640; }
+      @media (min-width: 769px) and (max-width: 1024px) {
+        section.profile main div h3 {
+          line-height: 5vw;
+          font-size: 5vw; } }
+      @media (min-width: 1025px) {
+        section.profile main div h3 {
+          line-height: 50px;
+          font-size: 50px; } }
+    section.profile main div h4 {
+      font-size: 3vw;
+      color: #8298B9; }
+      @media (min-width: 769px) and (max-width: 1024px) {
+        section.profile main div h4 {
+          font-size: 2vw;
+          line-height: 2vw; } }
+      @media (min-width: 1025px) {
+        section.profile main div h4 {
+          font-size: 20px;
+          line-height: 20px; } }
+  section.profile main button {
+    line-height: 5.5vw;
+    font-size: 4.5vw;
+    color: white;
+    width: 78vw;
+    height: 15vw;
+    border-radius: 100px;
+    background: #FFA640;
+    font-weight: bold;
+    margin: 0 auto;
+    margin-top: 7vw;
+    box-shadow: none;
+    letter-spacing: 1.5vw; }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      section.profile main button {
+        width: 27vw;
+        height: 9vw;
+        line-height: 3.5vw;
+        font-size: 3vw;
+        margin: 0;
+        letter-spacing: 1vw; } }
+    @media (min-width: 1025px) {
+      section.profile main button {
+        width: 27vw;
+        height: 90px;
+        line-height: 35px;
+        font-size: 30px;
+        margin: 0;
+        letter-spacing: 1vw; } }
 
 section.comments {
   width: 88vw;

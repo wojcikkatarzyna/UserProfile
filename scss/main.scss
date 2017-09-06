@@ -3,9 +3,11 @@
 @import "media";
 @import "placeholders";
 @import "app";
-@import "section-profile";
+@import "section-profile-header";
+@import "section-profile-alert";
+@import "section-profile-main";
 @import "section-comments";
-@import "singleComment";
+@import "section-comments-singleComment";
 @import "loading";
 
 *{

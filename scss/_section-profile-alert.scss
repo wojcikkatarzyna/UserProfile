@@ -1,0 +1,61 @@
+section.profile{
+    header{
+        position: relative;
+        .alert{
+            width: 75vw;
+            height: 6vw;
+            border: 2px solid $background_color1;
+            font-size: 2.5vw;
+            display: flex;
+            position: absolute;
+            top: 7vw;
+            right: 7vw;
+            @include tablet{
+                top: 1vw;
+                right: 1vw;
+            }
+            @include desktop{
+                top: 150px;
+                right: 10px;
+                width: 750px;
+                height: 60px;
+                font-size: 25px;
+            }
+            span {
+                width: 20%;
+                line-height: 6vw;
+                color: $main_color;
+                font-weight: bold;
+                @include desktop{
+                    line-height: 60px;
+                }
+            }
+            input{
+                height: 4vw;
+                width: 75%;
+                margin: 1vw auto;
+                font-family: 'Montserrat', sans-serif;
+                color: $support_color;
+                @include desktop{
+                    height: 40px;
+                    margin: 10px auto;
+                }
+            }
+            button{
+                width: 4vw;
+                height: 4vw;
+                margin: 1vw;
+                background: $main_color;
+                color: $background_color2;
+                font-weight: bold;
+                font-size: 2vw;
+                @include desktop{
+                    width: 40px;
+                    height: 40px;
+                    margin: 10px;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
