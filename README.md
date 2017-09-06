@@ -9,4 +9,4 @@ To run project use commands:
 
 * npm install
 * npm install -g json-server
-* json-server --watch database/comments.json
+* json-server --watch database/data.json
