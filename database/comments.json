@@ -3,74 +3,18 @@
     {
       "author": "Mike Ross",
       "photo": "images/Mike.jpg",
-      "comment": "pierwsze",
-      "date": "2017-09-05T11:35:33.311Z",
-      "timeCounter": 1504611333311,
+      "comment": "Praesent nec erat. Integer ac nunc mauris, consectetuer at, velit. Suspendisse rutrum pede massa, tincidunt vel, viverra arcu, eget dolor sit amet, massa. Mauris rutrum, lorem sodales eu, dapibus non, sollicitudin dignissim, nulla sit amet.",
+      "date": "2017-09-06T08:01:47.909Z",
+      "timeCounter": 1504684907909,
       "id": 1
     },
     {
       "author": "Mike Ross",
       "photo": "images/Mike.jpg",
-      "comment": "drugi\n",
-      "date": "2017-09-05T11:39:20.835Z",
-      "timeCounter": 1504611560835,
+      "comment": "\nNullam sit amet augue varius egestas, dui vitae sapien accumsan vestibulum. Nunc convallis libero. Proin scelerisque arcu. In hac habitasse platea dictumst. Sed tincidunt et, varius lorem. In turpis sed felis neque, fringilla sollicitudin, lectus.",
+      "date": "2017-09-06T08:02:03.613Z",
+      "timeCounter": 1504684923613,
       "id": 2
-    },
-    {
-      "author": "Mike Ross",
-      "photo": "images/Mike.jpg",
-      "comment": "trzeci",
-      "date": "2017-09-05T11:40:04.293Z",
-      "timeCounter": 1504611604293,
-      "id": 3
-    },
-    {
-      "author": "Mike Ross",
-      "photo": "images/Mike.jpg",
-      "comment": "czwarty\n",
-      "date": "2017-09-05T11:41:15.301Z",
-      "timeCounter": 1504611675301,
-      "id": 4
-    },
-    {
-      "author": "Mike Ross",
-      "photo": "images/Mike.jpg",
-      "comment": "piaty",
-      "date": "2017-09-05T11:41:19.744Z",
-      "timeCounter": 1504611679744,
-      "id": 5
-    },
-    {
-      "author": "Mike Ross",
-      "photo": "images/Mike.jpg",
-      "comment": "szosty",
-      "date": "2017-09-05T11:42:03.192Z",
-      "timeCounter": 1504611723192,
-      "id": 6
-    },
-    {
-      "author": "Mike Ross",
-      "photo": "images/Mike.jpg",
-      "comment": "siodmy",
-      "date": "2017-09-05T11:48:00.237Z",
-      "timeCounter": 1504612080237,
-      "id": 7
-    },
-    {
-      "author": "Mike Ross",
-      "photo": "images/Mike.jpg",
-      "comment": "osmy\n",
-      "date": "2017-09-05T12:11:45.095Z",
-      "timeCounter": 1504613505095,
-      "id": 8
-    },
-    {
-      "author": "Mike Ross",
-      "photo": "images/Mike.jpg",
-      "comment": "dziewiaty",
-      "date": "2017-09-05T12:12:35.401Z",
-      "timeCounter": 1504613555401,
-      "id": 9
     }
   ]
 }
