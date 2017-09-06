@@ -22969,6 +22969,22 @@ var User = function (_React$Component) {
 
 
     _createClass(User, [{
+        key: 'componentDidMount',
+
+
+        // take from JSON file statistics (no of likes)
+        value: function componentDidMount() {
+            var _this2 = this;
+
+            fetch('http://localhost:3000/user').then(function (r) {
+                return r.json();
+            }).then(function (response) {
+                _this2.setState({
+                    likes: response[0].likes
+                });
+            });
+        }
+    }, {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
@@ -23043,10 +23059,10 @@ var UserInfo = function (_React$Component) {
         };
 
         _this.state = {
-            userName: "Harvey ",
-            userSurname: "Specter",
-            userCity: "New York",
-            userCountry: "USA",
+            userName: "",
+            userSurname: "",
+            userCity: "",
+            userCountry: "",
             displayAlert: false
         };
         return _this;
@@ -23062,6 +23078,25 @@ var UserInfo = function (_React$Component) {
 
 
     _createClass(UserInfo, [{
+        key: 'componentDidMount',
+
+
+        // take from JSON file info about user (name, surname, city, country)
+        value: function componentDidMount() {
+            var _this2 = this;
+
+            fetch('http://localhost:3000/user').then(function (r) {
+                return r.json();
+            }).then(function (response) {
+                _this2.setState({
+                    userName: response[0].name,
+                    userSurname: response[0].surname,
+                    userCity: response[0].city,
+                    userCountry: response[0].country
+                });
+            });
+        }
+    }, {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
@@ -23153,6 +23188,23 @@ var UserStatistic = function (_React$Component) {
 
 
     _createClass(UserStatistic, [{
+        key: 'componentDidMount',
+
+
+        // take from JSON file statistics (no of followers and followings)
+        value: function componentDidMount() {
+            var _this2 = this;
+
+            fetch('http://localhost:3000/user').then(function (r) {
+                return r.json();
+            }).then(function (response) {
+                _this2.setState({
+                    followers: response[0].followers,
+                    followings: response[0].followings
+                });
+            });
+        }
+    }, {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
@@ -23180,7 +23232,9 @@ var UserStatistic = function (_React$Component) {
                     _react2.default.createElement(
                         'h3',
                         null,
-                        ' 0 '
+                        ' ',
+                        this.state.followings,
+                        ' '
                     ),
                     _react2.default.createElement(
                         'h4',

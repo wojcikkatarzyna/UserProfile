@@ -7,10 +7,10 @@ class UserInfo extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            userName : "Harvey ",
-            userSurname : "Specter",
-            userCity : "New York",
-            userCountry : "USA",
+            userName : "",
+            userSurname : "",
+            userCity : "",
+            userCountry : "",
             displayAlert : false,
         };
     }
@@ -36,6 +36,20 @@ class UserInfo extends React.Component{
         if ( typeof this.props.onLikes === 'function' ){
             this.props.onLikes();
         }
+    }
+
+    // take from JSON file info about user (name, surname, city, country)
+    componentDidMount() {
+        fetch('http://localhost:3000/user')
+        .then(r => r.json())
+        .then( response =>{
+            this.setState({
+                userName : response[0].name,
+                userSurname : response[0].surname,
+                userCity : response[0].city,
+                userCountry : response[0].country,
+            })
+        })
     }
 
     render(){

@@ -16,5 +16,16 @@
       "timeCounter": 1504684923613,
       "id": 2
     }
+  ],
+  "user": [
+    {
+      "name": "Harvey ",
+      "surname": "Specter",
+      "city": "New York",
+      "country": "USA",
+      "likes": 121,
+      "followings": 723,
+      "followers": 4433
+    }
   ]
 }

@@ -19,10 +19,21 @@ class User extends React.Component{
         })
     }
 
+    // take from JSON file statistics (no of likes)
+    componentDidMount() {
+        fetch('http://localhost:3000/user')
+        .then(r => r.json())
+        .then( response =>{
+            this.setState({
+                likes : response[0].likes,
+            })
+        })
+    }
+
     render(){
         return  <section className="profile">
-                    <UserInfo onLikes={this.handleAddLikes}/>
-                    <UserStatistic likes={this.state.likes}/>
+                    <UserInfo onLikes={this.handleAddLikes} />
+                    <UserStatistic likes={this.state.likes} />
                 </section>
     }
 }

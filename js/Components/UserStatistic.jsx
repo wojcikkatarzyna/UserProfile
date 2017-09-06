@@ -16,6 +16,19 @@ class UserStatistic extends React.Component{
             followers : this.state.followers + 1,
         })
     }
+
+    // take from JSON file statistics (no of followers and followings)
+    componentDidMount() {
+        fetch('http://localhost:3000/user')
+        .then(r => r.json())
+        .then( response =>{
+            this.setState({
+                followers : response[0].followers,
+                followings : response[0].followings,
+            })
+        })
+    }
+
     render(){
         return  <main className="statistic">
                     <div className="likes">
@@ -23,7 +36,7 @@ class UserStatistic extends React.Component{
                         <h4> Likes </h4>
                     </div>
                     <div className="following">
-                        <h3> 0 </h3>
+                        <h3> {this.state.followings} </h3>
                         <h4> Following </h4>
                     </div>
                     <div className="followers">
