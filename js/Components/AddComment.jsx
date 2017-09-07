@@ -20,7 +20,7 @@ class AddComment extends React.Component{
     }
 
     handleEnterPress = (e) => {
-        if (e.keyCode === 13) {
+        if ((e.keyCode === 13) && (this.state.currentComment !== "")) {
             //create object from current comment
             const comment = {
                 author : this.state.currentUserName,
